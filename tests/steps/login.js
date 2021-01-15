@@ -2,7 +2,7 @@ import {Given, When, Then} from 'cucumber';
 import LoginPage from '../page-objects/login-page'
 
 Given(/^I am on the login page$/, function () {
-    browser.url("https://stagingportal.mypromethean.com/");
+  LoginPage.visitLoginPage();
   });
 
 When(/^I am on login using email page$/, function () {

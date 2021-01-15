@@ -6,6 +6,10 @@ class LoginPage {
     get signInButton() { return $("button[class*='portal-button--primary']") }
     get appButton() { return $("#command-button") }
 
+    visitLoginPage(){
+        browser.url("https://stagingportal.mypromethean.com/");
+    }
+
     emailLoginPage(){
         this.emailButton.click();
     }
