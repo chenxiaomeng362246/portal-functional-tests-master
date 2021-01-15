@@ -46,6 +46,10 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Report directories
+allure-report/
+reports/
+
 # TypeScript v1 declaration files
 typings/
 
