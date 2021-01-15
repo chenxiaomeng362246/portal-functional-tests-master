@@ -1,0 +1,56 @@
+{
+  "uid" : "f346523602a3606e",
+  "name" : "Hook",
+  "fullName" : "Login: Login using email.Hook",
+  "historyId" : "3200af97cd9e4adc79ce7a0feccc3028",
+  "time" : {
+    "start" : 1610679139138,
+    "stop" : 1610679139139,
+    "duration" : 1
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Login: Login using email"
+  }, {
+    "name" : "testClass",
+    "value" : "Login: Login using email"
+  }, {
+    "name" : "testMethod",
+    "value" : "Hook"
+  }, {
+    "name" : "package",
+    "value" : "Login: Login using email"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-87.0.4280.141"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f346523602a3606e.json",
+  "parameterValues" : [ "chrome-87.0.4280.141" ]
+}

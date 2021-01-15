@@ -1,0 +1,74 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "Login: Login using email",
+    "children" : [ {
+      "name" : "Given I am on the login page",
+      "uid" : "da45c1082014666e",
+      "parentUid" : "38a5b4513e450247e4a141d0fa594f48",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610726448550,
+        "stop" : 1610726454146,
+        "duration" : 5596
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-87.0.4280.141" ]
+    }, {
+      "name" : "When I am on login using email page",
+      "uid" : "67aca7d85f811169",
+      "parentUid" : "38a5b4513e450247e4a141d0fa594f48",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610726454146,
+        "stop" : 1610726457594,
+        "duration" : 3448
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-87.0.4280.141" ]
+    }, {
+      "name" : "And login using valid credenials",
+      "uid" : "8cbd6501050bc858",
+      "parentUid" : "38a5b4513e450247e4a141d0fa594f48",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610726457594,
+        "stop" : 1610726457936,
+        "duration" : 342
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-87.0.4280.141" ]
+    }, {
+      "name" : "Then I am on home page",
+      "uid" : "e0b83f5797471912",
+      "parentUid" : "38a5b4513e450247e4a141d0fa594f48",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610726457936,
+        "stop" : 1610726457997,
+        "duration" : 61
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-87.0.4280.141" ]
+    }, {
+      "name" : "Hook",
+      "uid" : "2e0172bb2ab126cc",
+      "parentUid" : "38a5b4513e450247e4a141d0fa594f48",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610726457997,
+        "stop" : 1610726457997,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-87.0.4280.141" ]
+    } ],
+    "uid" : "38a5b4513e450247e4a141d0fa594f48"
+  } ]
+}

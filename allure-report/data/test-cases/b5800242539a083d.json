@@ -1,0 +1,147 @@
+{
+  "uid" : "b5800242539a083d",
+  "name" : "Then I am on home page",
+  "fullName" : "Login: Login using email.Then I am on home page",
+  "historyId" : "93705584607da6289de62ad9b8561c15",
+  "time" : {
+    "start" : 1610707904356,
+    "stop" : 1610707904419,
+    "duration" : 63
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "POST /session/:sessionId/element",
+      "time" : {
+        "start" : 1610707904357,
+        "stop" : 1610707904368,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "776ae06141c38668",
+        "name" : "Request",
+        "source" : "776ae06141c38668.json",
+        "type" : "application/json",
+        "size" : 59
+      }, {
+        "uid" : "5d1aa5a2903ad652",
+        "name" : "Response",
+        "source" : "5d1aa5a2903ad652.json",
+        "type" : "application/json",
+        "size" : 83
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "POST /session/:sessionId/execute/sync",
+      "time" : {
+        "start" : 1610707904372,
+        "stop" : 1610707904385,
+        "duration" : 13
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "c7581789ef1c88bf",
+        "name" : "Request",
+        "source" : "c7581789ef1c88bf.json",
+        "type" : "application/json",
+        "size" : 5893
+      }, {
+        "uid" : "52982db3ebf07b59",
+        "name" : "Response",
+        "source" : "52982db3ebf07b59.json",
+        "type" : "application/json",
+        "size" : 4
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "POST /session/:sessionId/execute/sync",
+      "time" : {
+        "start" : 1610707904385,
+        "stop" : 1610707904418,
+        "duration" : 33
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "c113d8c9f82c2d6d",
+        "name" : "Request",
+        "source" : "c113d8c9f82c2d6d.json",
+        "type" : "application/json",
+        "size" : 4285
+      }, {
+        "uid" : "8ce7ca64c0a26991",
+        "name" : "Response",
+        "source" : "8ce7ca64c0a26991.json",
+        "type" : "application/json",
+        "size" : 4
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 6,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Login: Login using email"
+  }, {
+    "name" : "testClass",
+    "value" : "Login: Login using email"
+  }, {
+    "name" : "testMethod",
+    "value" : "Then I am on home page"
+  }, {
+    "name" : "package",
+    "value" : "Login: Login using email"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-87.0.4280.141"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b5800242539a083d.json",
+  "parameterValues" : [ "chrome-87.0.4280.141" ]
+}

@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//div[@class='portal-button--link']/span[contains(text(),'Sign in with email')]"
+}

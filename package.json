@@ -1,0 +1,38 @@
+{
+  "name": "portal-functional-tests",
+  "version": "1.0.0",
+  "description": "functinal test automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/wdio wdio.conf.js && npm run open-allure",
+    "open-allure": "./node_modules/.bin/allure generate ./reports/allure-results --clean && allure open"
+  },
+  "author": "abbas.qazvini",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "@wdio/allure-reporter": "^6.11.0",
+    "@wdio/cli": "^6.12.0",
+    "@wdio/cucumber-framework": "^6.11.1",
+    "@wdio/local-runner": "^6.12.0",
+    "@wdio/selenium-standalone-service": "^6.11.0",
+    "@wdio/spec-reporter": "^6.11.0",
+    "@wdio/sync": "^6.11.0",
+    "allure-commandline": "^2.13.8"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}

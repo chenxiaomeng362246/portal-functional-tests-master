@@ -1,0 +1,129 @@
+{
+  "uid" : "da45c1082014666e",
+  "name" : "Given I am on the login page",
+  "fullName" : "Login: Login using email.Given I am on the login page",
+  "historyId" : "2a03ef1476b59df6bd12b8cfb1a8af36",
+  "time" : {
+    "start" : 1610726448550,
+    "stop" : 1610726454146,
+    "duration" : 5596
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "POST /session/:sessionId/url",
+      "time" : {
+        "start" : 1610726448557,
+        "stop" : 1610726454145,
+        "duration" : 5588
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8e5939c3a1588730",
+        "name" : "Request",
+        "source" : "8e5939c3a1588730.json",
+        "type" : "application/json",
+        "size" : 54
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Login: Login using email"
+  }, {
+    "name" : "testClass",
+    "value" : "Login: Login using email"
+  }, {
+    "name" : "testMethod",
+    "value" : "Given I am on the login page"
+  }, {
+    "name" : "package",
+    "value" : "Login: Login using email"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-87.0.4280.141"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "a51337c1514ac2f7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610707895570,
+        "stop" : 1610707900192,
+        "duration" : 4622
+      }
+    }, {
+      "uid" : "fa32f0996588e687",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610679133191,
+        "stop" : 1610679135622,
+        "duration" : 2431
+      }
+    }, {
+      "uid" : "5c5445da407c70e6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610678560924,
+        "stop" : 1610678563212,
+        "duration" : 2288
+      }
+    }, {
+      "uid" : "67894daae281ac10",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610678293450,
+        "stop" : 1610678296909,
+        "duration" : 3459
+      }
+    }, {
+      "uid" : "9e4786f41069cda3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1610677900679,
+        "stop" : 1610677904219,
+        "duration" : 3540
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "da45c1082014666e.json",
+  "parameterValues" : [ "chrome-87.0.4280.141" ]
+}
