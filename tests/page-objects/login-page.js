@@ -15,8 +15,8 @@ class LoginPage {
     }
 
     emailLogin(){
-        this.emailInput.setValue("b3vm4i99klzd29bqgvr1za154@tstmail.link");
-        this.passwordInput.setValue("126Legenecy");
+        this.emailInput.setValue("");
+        this.passwordInput.setValue("");
         // browser.debug()
         this.signInButton.click();
     }
