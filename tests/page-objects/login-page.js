@@ -6,13 +6,17 @@ class LoginPage {
     get signInButton() { return $("button[class*='portal-button--primary']") }
     get appButton() { return $("#command-button") }
 
+    visitLoginPage(){
+        browser.url("https://stagingportal.mypromethean.com/");
+    }
+
     emailLoginPage(){
         this.emailButton.click();
     }
 
     emailLogin(){
-        this.emailInput.setValue("b3vm4i99klzd29bqgvr1za154@tstmail.link");
-        this.passwordInput.setValue("126Legenecy");
+        this.emailInput.setValue("");
+        this.passwordInput.setValue("");
         // browser.debug()
         this.signInButton.click();
     }

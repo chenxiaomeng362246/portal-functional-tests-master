@@ -1,6 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri Jan 15 16:00:57 GMT 2021","Fri Jan 15 16:00:57 GMT 2021","61","","Login: Login using email","","Login: Login using email","Then I am on home page","Then I am on home page",""
-"passed","Fri Jan 15 16:00:54 GMT 2021","Fri Jan 15 16:00:57 GMT 2021","3448","","Login: Login using email","","Login: Login using email","When I am on login using email page","When I am on login using email page",""
-"passed","Fri Jan 15 16:00:57 GMT 2021","Fri Jan 15 16:00:57 GMT 2021","0","","Login: Login using email","","Login: Login using email","Hook","Hook",""
-"passed","Fri Jan 15 16:00:57 GMT 2021","Fri Jan 15 16:00:57 GMT 2021","342","","Login: Login using email","","Login: Login using email","And login using valid credenials","And login using valid credenials",""
-"passed","Fri Jan 15 16:00:48 GMT 2021","Fri Jan 15 16:00:54 GMT 2021","5596","","Login: Login using email","","Login: Login using email","Given I am on the login page","Given I am on the login page",""
