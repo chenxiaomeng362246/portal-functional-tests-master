@@ -11,7 +11,6 @@ class LoginPage {
     }
 
     emailLoginPage(){
-        //browser.debug()
         if (
             this.emailButton.isExisting()){
             this.emailButton.click();
@@ -21,13 +20,11 @@ class LoginPage {
     emailLogin(){
         this.emailInput.setValue("");
         this.passwordInput.setValue("");
-        // browser.debug()
         this.signInButton.click();
     }
 
     verifyLogin(){
         this.appButton.isClickable();
-        // browser.debug()
     }
 
 }
