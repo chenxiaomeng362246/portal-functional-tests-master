@@ -11,19 +11,20 @@ class LoginPage {
     }
 
     emailLoginPage(){
-        this.emailButton.click();
+        if (
+            this.emailButton.isExisting()){
+            this.emailButton.click();
+        }
     }
 
     emailLogin(){
         this.emailInput.setValue("");
         this.passwordInput.setValue("");
-        // browser.debug()
         this.signInButton.click();
     }
 
     verifyLogin(){
         this.appButton.isClickable();
-        // browser.debug()
     }
 
 }
