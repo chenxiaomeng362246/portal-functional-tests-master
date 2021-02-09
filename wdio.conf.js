@@ -208,8 +208,9 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
+    before() {
+        browser.maximizeWindow(); //set window to max size
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -235,8 +236,12 @@ exports.config = {
     /**
      * Runs after a Cucumber step
      */
-    // afterStep: function ({ uri, feature, step }, context, { error, result, duration, passed, retries }) {
-    // },
+    afterStep: function ({ uri, feature, step },
+        context, { error, result, duration, passed, retries }) {
+        if (error) {
+            browser.takeScreenshot();  
+        }
+    },
     /**
      * Runs after a Cucumber scenario
      */
