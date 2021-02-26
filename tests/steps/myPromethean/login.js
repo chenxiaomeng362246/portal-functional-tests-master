@@ -1,8 +1,8 @@
-import {Given, When, Then} from 'cucumber';
+import {Given, When, Then} from '@cucumber/cucumber';
 import LoginPage from '../../page-objects/myPromethean/login-page'
 
 Given(/^I am on the login page$/, function () {
-  LoginPage.visitLoginPage();
+  LoginPage.visitMPLoginPage();
   });
 
 When(/^I am on login using email page$/, function () {
