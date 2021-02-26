@@ -7,15 +7,9 @@ class LoginPage {
     get appButton() { return $("#command-button") }
     get cookieButton() { return $("button.portal-button--primary.cookie-got-it") }
 
-    visitMPLoginPage(){
-        browser.url("https://stagingportal.mypromethean.com/");
-        if (this.cookieButton.isDisplayed){
-            this.cookieButton.click();
-        }
-    }
-
-    visitPMLoginPage(){
-        browser.url("https://staging-panel-management.mypromethean.com/");
+    visitLoginPage(baseUrl){
+        browser.url(baseUrl);
+        browser.pause(5000)
         if (this.cookieButton.isDisplayed){
             this.cookieButton.click();
         }
