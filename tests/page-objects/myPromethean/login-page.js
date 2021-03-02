@@ -8,6 +8,7 @@ class LoginPage {
     get cookieButton() { return $("button.portal-button--primary.cookie-got-it") }
 
     visitLoginPage(baseUrl){
+        browser.deleteCookies();
         browser.url(baseUrl);
         browser.pause(5000)
         if (this.cookieButton.isDisplayed){
@@ -30,6 +31,11 @@ class LoginPage {
 
     verifyLogin(){
         this.appButton.isClickable();
+    }
+
+    verifySignout(){
+        browser.pause(10000);
+        this.emailButton.isDisplayed();
     }
 
 }

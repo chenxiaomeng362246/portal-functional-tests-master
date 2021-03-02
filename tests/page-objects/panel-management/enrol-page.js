@@ -47,7 +47,8 @@ class EnrolPage {
 
     uploadCSVPage(){
         var path = require('path')
-        var file_path = path.join(__dirname, "./../../../testdata/enrol-panel.csv")//Relative path of enrol csv file
+        var file_path = path.join(__dirname, "./../../../testdata/enrol-panel.csv")
+        //Relative path of enrol csv file
         browser.pause(2000)
         this.uploadCSVButton.setValue(file_path)
         this.nextuplodButton.waitForClickable({ timeout: 10000 })
