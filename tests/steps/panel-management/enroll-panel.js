@@ -1,4 +1,4 @@
-import {Given, When, Then} from '@cucumber/cucumber';
+import {Given, When, Then} from 'cucumber';
 import LoginPage from '../../page-objects/myPromethean/login-page'
 import enrolPage from '../../page-objects/panel-management/enrol-page';
 
