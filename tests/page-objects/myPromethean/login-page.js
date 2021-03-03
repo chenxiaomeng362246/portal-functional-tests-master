@@ -6,11 +6,12 @@ class LoginPage {
     get signInButton() { return $("button[class*='portal-button--primary']") }
     get appButton() { return $("#command-button") }
     get cookieButton() { return $("button.portal-button--primary.cookie-got-it") }
+    get createaccountButton() { return $$("//span[text()='Need a myPromethean account?']")[1] }
 
     visitLoginPage(baseUrl){
         browser.deleteCookies();
         browser.url(baseUrl);
-        browser.pause(5000)
+        browser.pause(18000)
         if (this.cookieButton.isDisplayed){
             this.cookieButton.click();
         }
@@ -38,6 +39,12 @@ class LoginPage {
         this.emailButton.isDisplayed();
     }
 
+    createaccountpage(){
+        if (
+            this.createaccountButton.isExisting()){
+            this.createaccountButton.click();
+        }
+    }
 }
 
 export default new LoginPage()

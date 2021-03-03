@@ -1,6 +1,6 @@
 import {Given, When, Then} from 'cucumber';
 import LoginPage from '../../page-objects/myPromethean/login-page';
-import UsermanagementPage from '../../page-objects/user-management/assign-role-page';
+import usersearchPage from '../../page-objects/user-management/user-search-page';
 
 Given(/^I am logged in$/, function () {
     browser.deleteCookies()
@@ -12,9 +12,9 @@ Given(/^I am logged in$/, function () {
 });
 
 When(/^I search for a user$/, function () {
-    UsermanagementPage.verifyusersearchPage();
+    usersearchPage.verifyusersearchPage();
 });
 
 Then(/^the user is shown in search results$/, function () {
-    UsermanagementPage.verifyactivitylogsearchPage();
+    usersearchPage.verifyactivitylogsearchPage();
 });
