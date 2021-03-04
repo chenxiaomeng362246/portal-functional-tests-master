@@ -1,5 +1,5 @@
 import { assert } from 'console'
-class UsermanagementPage {
+class UsersearchPage {
     get typeusersearch() { return $("input[placeholder='Search']") }
     get searchButton() { return $("[data-icon='search']") }
     get activitylogButton() { return $$("a[style]")[1] }
@@ -29,4 +29,4 @@ class UsermanagementPage {
         assert(this.ndchenrjusernameText.getText(), "nd chenrj");
     }
 }
-export default new UsermanagementPage()
+export default new UsersearchPage()
