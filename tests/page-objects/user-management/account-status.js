@@ -1,9 +1,5 @@
 import { assert } from 'console'
 class accountstatusPage {
-    get typeusersearch() { return $("input[placeholder='Search']") }
-    get searchButton() { return $("[data-icon='search']") }
-    get clickcheckbox() { return $(".ant-table-body input") }
-    get managerolesButton() { return $("//span[text()='Manage roles']") }
     get suspendButton() { return $("//span[text()='Suspend account']") }
     get suspendconfirmButton() { return $("button.portal-button--primary") }
     get suspenduserText() { return $("//span[text()='Successfully suspended account']") }
