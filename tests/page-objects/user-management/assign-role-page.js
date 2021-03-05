@@ -13,6 +13,7 @@ class assignrolePage {
     get returnhomepageButton() { return $("div[class='ant-modal-wrap ']") }
     get verifyeditedButton() { return $("//div[text()='Site Manager, Teacher, Panel Administrator, Organisation Administrator']") } 
     get paneladministratortext() { return $("//div[text()='Panel Administrator']") }
+    get verifydeleteroleButton() { return $("//div[text()='Site Manager, Teacher, Organisation Administrator']") }
     
     searchPage(){
         browser.pause(15000)
@@ -62,7 +63,17 @@ class assignrolePage {
         this.returnhomepageButton.click()
         browser.pause(6000)
         assert(this.verifyeditedButton.isDisplayed(), true);
-        browser.deleteCookies()
+    }
+
+    verifydeleterolesPage(){
+        this.saveButton.waitForClickable({  timeout: 10000 })
+        this.saveButton.click()
+        var assert = require('assert')
+        browser.pause(6000)
+        assert(this.editedroleText.isDisplayed(), true);
+        this.returnhomepageButton.click()
+        browser.pause(4000)
+        assert(this.verifydeleteroleButton.isDisplayed(), true);
     }
 }
 

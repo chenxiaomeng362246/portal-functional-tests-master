@@ -32,3 +32,17 @@ When(/^add a new role$/, function () {
 Then(/^a new role should be added$/, function () {
     assignrolePage.verifyeditrolesPage();
 });
+
+When(/^delete a role$/, function () {
+    if(assignrolePage.paneladministratortext.isDisplayed()){
+        console.log("Panel Administrator role does not exist,don't need to add")
+    }else{
+        assignrolePage.assignroles();
+        assignrolePage.addnewroles();
+    }
+    assignrolePage.unassignrolesPage();
+});
+
+Then(/^the role should be removed$/, function () {
+    assignrolePage.verifydeleterolesPage();
+});
