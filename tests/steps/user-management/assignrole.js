@@ -21,12 +21,13 @@ When(/^I click on Roles$/, function () {
 
 When(/^add a new role$/, function () {
     if(assignrolePage.paneladministratortext.isDisplayed()){
-            console.log("Panel Administrator is exist,need to delete")
-            assignrolePage.unassignrolesPage();
+        console.log("Panel Administrator is exist,need to delete")
+        assignrolePage.unassignrolesPage();
     }else{    
-        console.log("Panel Administrator role already exist,do not need to delete");}   
-        assignrolePage.assignroles();
-        assignrolePage.addnewroles()
+        console.log("Panel Administrator role already exist,do not need to delete");
+    }   
+    assignrolePage.assignroles();
+    assignrolePage.addnewroles();
 });
     
 Then(/^a new role should be added$/, function () {
