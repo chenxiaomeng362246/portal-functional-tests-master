@@ -16,4 +16,18 @@ Then(/^the user should be suspended$/, function () {
     accountstatusPage.verifysuspendPage();
 });
 
+When(/^I click on Activate$/, function () {
+    if(accountstatusPage.activatedButton.isDisplayed()){
+        console.log("activate Button is exist,don't need to suspend")
+    }else{
+        accountstatusPage.suspendPage();
+        accountstatusPage.verifyreturnhomepageButton()
+        accountstatusPage.manageroledetailPage();
+    }
+    accountstatusPage.activatedPage();
+});
+     
+Then(/^the user should be activated$/, function () {
+    accountstatusPage.verifyactivatedPage();
+});
 

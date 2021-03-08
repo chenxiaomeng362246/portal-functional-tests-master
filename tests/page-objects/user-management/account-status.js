@@ -9,6 +9,8 @@ class accountstatusPage {
     get returnhomepageButton() { return $("div[class='ant-modal-wrap ']") }
     get refreshButton() { return $("span[class='icon-round-refresh-24px']") }
     get dropdownButton() { return $(".admin-button-list-default-icon") }
+    get activateduserText() { return $("//span[text()='Successfully activated account']") }
+    get verifyactivatedroleButton() { return $("//div[text()='Active']") }
     
     suspendPage(){
         browser.pause(1000)
@@ -48,6 +50,18 @@ class accountstatusPage {
         browser.pause(3000)
         this.refreshButton.click()
         browser.pause(3000)
+    }
+
+    verifyactivatedPage(){
+        var assert = require('assert')
+        browser.pause(6000)
+        assert(this.activateduserText.isDisplayed(), true);
+        this.returnhomepageButton.click()
+        browser.pause(3000)
+        this.refreshButton.click()
+        browser.pause(3000)
+        assert(this.verifyactivatedroleButton.isDisplayed(), true);
+        browser.deleteCookies()
     }
 }
 
