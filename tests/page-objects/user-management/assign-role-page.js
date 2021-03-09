@@ -11,7 +11,7 @@ class assignrolePage {
     get assignroleButton() { return $$("input[aria-invalid='false']")[1] }
     get deleteassignroleButton() { return $$("span[class='icon-round-delete-24px']")[1] }
     get returnhomepageButton() { return $("div[class='ant-modal-wrap ']") }
-    get verifyeditedButton() { return $("//div[text()='Site Manager, Teacher, Panel Administrator, Organisation Administrator']") } 
+    get verifyeditedButton() { return $("//div[contains(text(),'Panel Administrator')]") } 
     get paneladministratortext() { return $("//div[text()='Panel Administrator']") }
     get verifydeleteroleButton() { return $("//div[text()='Site Manager, Teacher, Organisation Administrator']") }
     
@@ -24,6 +24,7 @@ class assignrolePage {
         this.clickcheckbox.click()
         this.dropdownButton.waitForClickable({timeout: 30000 })
         this.dropdownButton.click()
+        browser.pause(2000)
     }
 
     manageroledetailPage(){
