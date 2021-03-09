@@ -1,4 +1,4 @@
-Feature: Enrol
+Feature: Enrol with CSV file
 #  PORT-2170
     Background: 
         Given I am on Panel Management home page
