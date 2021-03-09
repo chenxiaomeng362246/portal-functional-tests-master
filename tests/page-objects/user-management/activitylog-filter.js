@@ -14,7 +14,7 @@ class ActivitylogfilterPage {
     }
 
     filteractivitylog(){
-        browser.pause(2000)
+        browser.pause(5000)
         UserfilterPage.filteruserdropdownButton.click()
         browser.pause(1000)
         this.checkboxndchenrjuserText.click()
