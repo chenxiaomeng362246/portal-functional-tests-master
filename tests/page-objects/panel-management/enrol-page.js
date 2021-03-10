@@ -14,6 +14,9 @@ class EnrolPage {
     get unenrolButton() { return $("//span[text()='Unenrol']") }
     get checkunenrolButton() { return $("button.portal-button--primary")}
     get checkunenrolText() { return $("//span[text()='Successfully unenrolled panel']") }
+    get TypemanuallyButton() { return $("//h3[text()='Type it in manually']") }
+    get panelNameBox() { return $$("input[type='text']")[2] }
+    get serialNumber() { return $$("input[type='text']")[3] }
 
     visitEnrolPage(){
         browser.pause(15000)
@@ -83,6 +86,21 @@ class EnrolPage {
         browser.pause(7000)
         assert(this.checkunenrolText.isDisplayed(), true);
         browser.deleteCookies()
+    }
+
+    TypemanuallyPage(){
+        this.enrolButton.waitForClickable({ timeout: 5000 });
+        this.enrolButton.click();
+        browser.pause(7000)
+        this.TypemanuallyButton.waitForClickable({timeout: 20000 });
+        this.TypemanuallyButton.click();
+    }
+    EnrolmanuallyPage(){
+        this.panelNameBox.setValue("786T-J62L3R2760007-env-orstaging");
+        this.serialNumber.setValue("786T-J62L3R2760007");
+        browser.pause(2000)
+        this.nextuplodButton.click();
+        browser.pause(2000);
     }
 
 }
