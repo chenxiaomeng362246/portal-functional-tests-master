@@ -13,13 +13,25 @@ Given(/^I am on Panel Management home page$/, function () {
 
 When(/^I am on enrol page$/, function () {
     enrolPage.clickIntoEnrolPage();
-  });
+});
 
 When(/^I importCSV file$/, function () {
     enrolPage.importCSVPage();
-  });
+});
 
 Then(/^I enrol panel by uploadCSV file$/, function () {
     enrolPage.uploadCSVPage();
     enrolPage.verifyenrolPage();
-  });
+});
+
+When(/^I am on typemanually page$/, function () {
+  enrolPage.TypemanuallyPage();
+});
+
+When(/^I am on enrolmanually page$/, function () {
+  enrolPage.EnrolmanuallyPage();
+});
+
+Then(/^I am on successfullly enrol page$/, function () {
+  enrolPage.verifyenrolPage();
+});
