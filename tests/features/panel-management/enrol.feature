@@ -14,3 +14,9 @@ Feature: Enrol
     When  I am on typemanually page
     And I am on enrolmanually page
     Then I am on successfullly enrol page
+
+# PORT-2172
+    Scenario: unenrol panel
+    When  I am on unenrol page
+    And I am on unenrol this page
+    Then I am on successfullly unenrol page
