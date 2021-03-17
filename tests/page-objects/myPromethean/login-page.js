@@ -1,5 +1,4 @@
 class LoginPage {
-
     get emailButton() { return $$("//div[@class='portal-button--link']/span[contains(text(),'Sign in with email')]")[1] }
     get emailInput() { return $("input[type*='text']") }
     get passwordInput() { return $("input[type*='password']") }
@@ -7,7 +6,7 @@ class LoginPage {
     get appButton() { return $("#command-button") }
     get cookieButton() { return $("button.portal-button--primary.cookie-got-it") }
     get createaccountButton() { return $$("//span[text()='Need a myPromethean account?']")[1] }
-
+    
     visitLoginPage(baseUrl){
         browser.deleteCookies();
         browser.url(baseUrl);
