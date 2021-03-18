@@ -2,6 +2,7 @@ import {Given, When, Then} from 'cucumber';
 import LoginPage from '../../page-objects/myPromethean/login-page'
 import homePage from '../../page-objects/myPromethean/home-page'
 import forgotpasswordPage from '../../page-objects/myPromethean/forgot-password';
+import changePassword from '../../page-objects/myPromethean/change-password';
 
 var baseUrl = "https://stagingportal.mypromethean.com/"
 var emailaddres = ""
@@ -49,4 +50,13 @@ When(/^I enter Invalid email$/, function () {
 
 Then(/^I should get an error$/, function () {
   forgotpasswordPage.verifyerrorpromptPage();
+});
+
+When(/^I change the password$/, function () {
+  changePassword.enterchangepasswordpage();
+  changePassword.typenewpasswordpage();
+});
+
+Then(/^password must be changed$/, function () {
+  changePassword.verifynewpasswordpage();
 });
