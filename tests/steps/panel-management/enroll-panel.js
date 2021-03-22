@@ -35,3 +35,16 @@ When(/^I am on enrolmanually page$/, function () {
 Then(/^I am on successfullly enrol page$/, function () {
   enrolPage.verifyenrolPage();
 });
+
+When(/^I am on unenrol page$/, function () {
+  enrolPage.addpaneluserexist();
+  enrolPage.IntounenrolPage();
+});
+
+When(/^I am on unenrol this page$/, function () {
+  enrolPage.unenrolPage();
+});
+
+Then(/^I am on successfullly unenrol page$/, function () {
+  enrolPage.verifyunenrolPage();
+});

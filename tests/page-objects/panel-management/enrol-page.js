@@ -95,12 +95,20 @@ class EnrolPage {
         this.TypemanuallyButton.waitForClickable({timeout: 20000 });
         this.TypemanuallyButton.click();
     }
+
     EnrolmanuallyPage(){
         this.panelNameBox.setValue("786T-J62L3R2760007-env-orstaging");
         this.serialNumber.setValue("786T-J62L3R2760007");
         browser.pause(2000)
         this.nextuplodButton.click();
         browser.pause(2000);
+    }
+
+    addpaneluserexist(){
+        this.TypemanuallyPage()
+        this.EnrolmanuallyPage()
+        browser.refresh()
+        browser.pause(10000)
     }
 
 }
