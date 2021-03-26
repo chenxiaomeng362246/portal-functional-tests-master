@@ -20,3 +20,9 @@ Feature: Authentication
     And I click on Forgot Password
     When I enter Invalid email
     Then I should get an error
+
+    # PORT-2189
+    Scenario: Change password after login 
+    And I am logged in page
+    When I change the password
+    Then password must be changed
