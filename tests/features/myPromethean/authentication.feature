@@ -14,3 +14,9 @@ Feature: Authentication
     When I am on MyPromethean home page
     And I click on Signout
     Then I should Signout
+
+    # PORT-2188
+    Scenario: invalid email code on forgot page
+    And I click on Forgot Password
+    When I enter Invalid email
+    Then I should get an error
