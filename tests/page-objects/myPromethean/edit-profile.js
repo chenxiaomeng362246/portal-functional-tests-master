@@ -26,11 +26,10 @@ class editprofilePage {
     }
 
     editprofilepage(option){
-        var str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         var result = '';
         for (var i = 2; i > 0; --i) 
           result += str[Math.floor(Math.random() * str.length)];
-        console.log(result)
         browser.pause(5000)
         if(option =="firstName"){
             this.fristnameInput.clearValue()
