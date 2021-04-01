@@ -67,5 +67,5 @@ When(/^I enter an Invalid code$/, function () {
 });
 
 Then(/^I should get an error information$/, function () {
-  forgotpasswordPage.verifyerrorpromptPage();
+  forgotpasswordPage.verifyinvalidpromptPage();
 });

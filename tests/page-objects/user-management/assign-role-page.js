@@ -18,7 +18,7 @@ class assignrolePage {
     searchPage(){
         browser.pause(15000)
         this.typeusersearch.click()
-        this.typeusersearch.setValue("chenrj")
+        this.typeusersearch.setValue("chenrj@nd.com.cn")
         this.searchButton.click()
         browser.pause(3000)
         this.clickcheckbox.click()
