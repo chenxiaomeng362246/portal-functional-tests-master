@@ -6,8 +6,9 @@ import changePassword from '../../page-objects/myPromethean/change-password';
 
 var baseUrl = "https://stagingportal.mypromethean.com/"
 var emailaddres = ""
-var emailcode = ""
+var erroremailcode = ""
 var newpassword = ""
+var invalidemailcode = ""
 
 Given(/^I am on the login page$/, function () {
   LoginPage.visitLoginPage(baseUrl);
@@ -45,7 +46,7 @@ Given(/^I click on Forgot Password$/, function () {
 });
 
 When(/^I enter Invalid email$/, function () {
-  forgotpasswordPage.typeinformation(emailcode,newpassword);
+  forgotpasswordPage.typeinformation(erroremailcode,newpassword);
 });
 
 Then(/^I should get an error$/, function () {
@@ -59,4 +60,12 @@ When(/^I change the password$/, function () {
 
 Then(/^password must be changed$/, function () {
   changePassword.verifynewpasswordpage();
+});
+
+When(/^I enter an Invalid code$/, function () {
+  forgotpasswordPage.typeinformation(invalidemailcode,newpassword);
+});
+
+Then(/^I should get an error information$/, function () {
+  forgotpasswordPage.verifyinvalidpromptPage();
 });

@@ -16,7 +16,7 @@ Feature: Authentication
     Then I should Signout
 
     # PORT-2188
-    Scenario: invalid email code on forgot page
+    Scenario:  Invalid email on forgot password page
     And I click on Forgot Password
     When I enter Invalid email
     Then I should get an error
@@ -26,3 +26,9 @@ Feature: Authentication
     And I am logged in page
     When I change the password
     Then password must be changed
+
+    # PORT-2192
+    Scenario: Invalid code on forgot password page
+    And I click on Forgot Password
+    When I enter an Invalid code
+    Then I should get an error information

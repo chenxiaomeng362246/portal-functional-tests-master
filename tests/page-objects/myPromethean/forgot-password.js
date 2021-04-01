@@ -7,7 +7,9 @@ class forgotpasswordPage {
     get newpasswordInput() { return $$("input[type*='password']")[0] }
     get confirmpasswordInput() { return $$("input[type*='password']")[1] }
     get resetpasswordInput() { return $("button[type*='submit']") }
-    get invalidemailcodetext(){return $("//span[contains(text(),'We are having trouble with that code.')]")}
+    get erroremailcodetext(){return $("//span[contains(text(),'We are having trouble with that code.')]")}
+    get invalidemailcodetext(){return $("//div[contains(text(),'Please enter the verification code as it appears in the email.')]")}
+    get returnresetpasswordpage(){return $("div[class='ant-modal-wrap ']")}
 
     enterforgotpasswordPage(){
         browser.pause(1000)
@@ -24,6 +26,7 @@ class forgotpasswordPage {
 
     typeinformation(emailcode, newpassword){
         browser.pause(7000)
+        this.returnresetpasswordpage.click()
         this.verificationInput.setValue(emailcode);
         this.newpasswordInput.setValue(newpassword);
         browser.pause(1000)
@@ -31,6 +34,13 @@ class forgotpasswordPage {
     }
 
     verifyerrorpromptPage(){
+        browser.pause(1000)
+        this.resetpasswordInput.click()
+        browser.pause(5000)
+        assert(this.erroremailcodetext.isDisplayed(), true);
+    }
+
+    verifyinvalidpromptPage(){
         browser.pause(1000)
         this.resetpasswordInput.click()
         browser.pause(5000)
