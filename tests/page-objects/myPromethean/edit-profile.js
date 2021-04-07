@@ -1,4 +1,5 @@
 import homepage from '../../page-objects/myPromethean/home-page';
+import Commonmethods from '../../utils/commonmethods';
 import { assert } from 'console'
 class editprofilePage {
     get editprofileButton() { return $("//li[contains(text(),'Edit Profile')]")}
@@ -26,15 +27,11 @@ class editprofilePage {
     }
 
     editprofilepage(option){
-        const str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var result = '';
-        for (var i = 2; i > 0; --i) 
-          result += str[Math.floor(Math.random() * str.length)];
         browser.pause(5000)
         if(option =="firstName"){
             this.fristnameInput.clearValue()
             browser.pause(2000)
-            this.fristnameInput.setValue(result)
+            this.fristnameInput.setValue(Commonmethods.randomString())
         }else if(option =="country"){
             if(this.Americacountrytext.isDisplayed()){
                 this.countrydropbutton.click()
