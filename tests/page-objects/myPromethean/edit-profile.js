@@ -18,6 +18,15 @@ class editprofilePage {
     get lnztestimorganisationInput() { return $("//span[contains(text(),'lnz_testim_organization')]")}
     get lnztestimInput() { return $("//span[contains(text(),'LNZ_Testim')]")}
 
+    randomString(){
+        const str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var result = '';
+        for (var i = 2; i > 0; --i) 
+          result += str[Math.floor(Math.random() * str.length)];
+        console.log(result)
+        return result
+    }
+
     entereditprofilepage(){
         browser.pause(15000)
         homepage.dropdownIcon.click()
@@ -26,15 +35,11 @@ class editprofilePage {
     }
 
     editprofilepage(option){
-        const str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var result = '';
-        for (var i = 2; i > 0; --i) 
-          result += str[Math.floor(Math.random() * str.length)];
         browser.pause(5000)
         if(option =="firstName"){
             this.fristnameInput.clearValue()
             browser.pause(2000)
-            this.fristnameInput.setValue(result)
+            this.fristnameInput.setValue(this.randomString())
         }else if(option =="country"){
             if(this.Americacountrytext.isDisplayed()){
                 this.countrydropbutton.click()

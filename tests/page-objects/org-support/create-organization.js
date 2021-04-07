@@ -1,7 +1,8 @@
 import homepage from '../../page-objects/myPromethean/home-page';
+import editprofilePage from '../../page-objects/myPromethean/edit-profile';
 import { assert } from 'console'
-class createorgPage {
 
+class createorgPage {
     get dropdownorgazizationButton() { return $("//span[@class = 'icon-round-expand_more-24px']") }
     get PrometheanWorldText() { return $("//span[contains(text(),'Promethean World')]")}
     get createorgazizationButton() { return $("//span[@class = 'admin-button-list-default-icon icon-round-add-24px']") }
@@ -9,7 +10,6 @@ class createorgPage {
     get organizationDomainInput() { return $("input[name='organizationDomain']") }
     get savebutton() { return $("button[class='portal-button--primary']") }
     get existeddomainText() { return $("//div[contains(text(),'This domain is being used by another organization')]")}
-
 
     PrometheanWorldPage(){
         browser.pause(15000)
@@ -19,37 +19,24 @@ class createorgPage {
         browser.pause(4000)
         this.PrometheanWorldText.click()
     }
+
     Createneworganizationbutton(){
         browser.pause(7000)
         this.createorgazizationButton.click()
     }
 
     Createneworganizationpage(){
-        const str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var result = '';
-        for (var i = 2; i > 0; --i) 
-          result += str[Math.floor(Math.random() * str.length)];
         browser.pause(7000)
-        this.organizationNameInput.setValue(result)
+        this.organizationNameInput.setValue(editprofilePage.randomString())
         this.organizationDomainInput.setValue("nd.com.cn")
         browser.pause(1000)
         this.savebutton.click()
-
     }
 
     verifycreateorganization(){
         browser.pause(5000)
         assert(this.existeddomainText.isDisplayed(),true)
-
     }
-
-
-
-
-
-
-
-
 }
 
 export default new createorgPage()
