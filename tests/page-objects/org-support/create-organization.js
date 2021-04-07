@@ -1,5 +1,5 @@
 import homepage from '../../page-objects/myPromethean/home-page';
-import editprofilePage from '../../page-objects/myPromethean/edit-profile';
+import Commonmethods from '../../utils/commonmethods';
 import { assert } from 'console'
 
 class createorgPage {
@@ -27,7 +27,7 @@ class createorgPage {
 
     Createneworganizationpage(){
         browser.pause(7000)
-        this.organizationNameInput.setValue(editprofilePage.randomString())
+        this.organizationNameInput.setValue(Commonmethods.randomString())
         this.organizationDomainInput.setValue("nd.com.cn")
         browser.pause(1000)
         this.savebutton.click()
