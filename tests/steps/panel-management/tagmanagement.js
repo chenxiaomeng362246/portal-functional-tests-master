@@ -18,4 +18,23 @@ When(/^I create a new tag$/, function () {
 
 Then(/^a new tag is created$/, function () {
     tagmanagementPage.verifytagaddedtext();
+}); 
+
+Given(/^there is a Tag present$/, function () {
+    if(tagmanagementPage.tagaddedname.isDisplayed()){
+        console.log("tag has added, not need to add tag")
+    }else{
+        tagmanagementPage.addtagpage();
+        tagmanagementPage.typenewtagname(); 
+        tagmanagementPage.verifytagaddedtext();
+        tagmanagementPage.returntagpage.click();
+    }
+});
+  
+When(/^I delete a tag$/, function () {
+      tagmanagementPage.deletetagpage();
+});
+  
+Then(/^the tag is deleted$/, function () {
+      tagmanagementPage.verifytagdeletedtext();
 });
