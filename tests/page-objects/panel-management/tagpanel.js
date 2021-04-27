@@ -63,6 +63,33 @@ class tagpanelPage {
         const assert = require('assert');
         assert.strictEqual(this.devicenametext.isDisplayed(),true)
     }
+
+    removetagtopanel(){
+        if (this.checktaghasaddedtext.length==2){
+            browser.pause(2000)
+            var a = this.tagcheckboxbutton.length
+            this.tagcheckboxbutton[parseInt(a)-1].click()
+            browser.pause(5000)
+            tagmanagementPage.savetagbutton.click()
+            browser.pause(5000)
+            const assert = require('assert');
+            assert.strictEqual(this.addtagpaneltext.isDisplayed(), true);
+            browser.refresh()
+        }else{
+            console.log("tag is not exist, no need remove it")
+            this.canceltagbutton.click()
+        }
+    }
+
+    verifytagremovetopaneltext(){
+        browser.pause(7000)
+        this.droptaggrouglistbutton.click()
+        browser.pause(2000)
+        this.droptag2.click()
+        browser.pause(5000)
+        const assert = require('assert');
+        assert.strictEqual(this.devicenametext.isDisplayed(),false)
+    }
    
 }
 
