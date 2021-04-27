@@ -1,4 +1,3 @@
-import { assert } from 'console'
 import tagmanagementPage from '../../page-objects/panel-management/tagmanagement'
 import EnrolPage from '../../page-objects/panel-management/enrol-page'
 class tagpanelPage {
@@ -7,7 +6,7 @@ class tagpanelPage {
     get Managetagsbutton(){ return  $("//span[contains(text(),'Manage tags')]")}
     get tagcheckboxbutton() { return $$("span[class='MuiIconButton-label']") }
     get addtagpaneltext(){return $("//span[contains(text(),'Edited tag for selected panels')]") }
-    get checktaghasaddedtext(){return $(".ant-modal-body span[class = 'MuiButtonBase-root MuiIconButton-root jss2 MuiCheckbox-root MuiCheckbox-colorSecondary jss3 Mui-checked MuiIconButton-colorSecondary']")}
+    get checktaghasaddedtext(){ return $$("//span[contains(@class, 'MuiIconButton-colorSecondary')]")}
     get canceltagbutton() { return $("button[class='portal-button--secondary']") }
     get droptaggrouglistbutton(){ return  $("//span[contains(text(),'Tag group:  aaaa')]")}
     get droptag2(){ return $$("//span[contains(text(),'test_tag2')]")[0]}
@@ -15,7 +14,7 @@ class tagpanelPage {
     checkpanelinfo(){
         browser.pause(15000)
         if (this.devicenametext.isDisplayed()){
-            console.log("panel is exit, no need add")
+            console.log("panel is exist, no need add")
         }else{
             tagmanagementPage.dropaddButton.click()
             EnrolPage.TypemanuallyPage()
@@ -35,20 +34,22 @@ class tagpanelPage {
         tagmanagementPage.dropaddButton.click()
         browser.pause(4000)
         this.Managetagsbutton.click()
+        browser.pause(6000)
     }
 
     assigntagtopanel(){
-        if (this.checktaghasaddedtext.isDisplayed()){
-            console.log("tag is exit, no need add it")
+        if (this.checktaghasaddedtext.length==2){
+            console.log("tag is exist, no need add it")
             this.canceltagbutton.click()
         }else{
-            browser.pause(2000)
+            browser.pause(5000)
             var a = this.tagcheckboxbutton.length
             this.tagcheckboxbutton[parseInt(a)-1].click()
             browser.pause(5000)
             tagmanagementPage.savetagbutton.click()
             browser.pause(5000)
-            assert(this.addtagpaneltext.isDisplayed(), true);
+            const assert = require('assert');
+            assert.strictEqual(this.addtagpaneltext.isDisplayed(), true);
             browser.refresh()
         }
     }
@@ -59,7 +60,8 @@ class tagpanelPage {
         browser.pause(2000)
         this.droptag2.click()
         browser.pause(5000)
-        assert(this.devicenametext.isDisplayed(), true);
+        const assert = require('assert');
+        assert.strictEqual(this.devicenametext.isDisplayed(),true)
     }
    
 }
