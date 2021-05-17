@@ -1,4 +1,3 @@
-import testdata from '../../../config/testdata'
 class LoginPage {
     get emailButton() { return $$("//div[@class='portal-button--link']/span[contains(text(),'Sign in with email')]")[1] }
     get emailInput() { return $("input[type*='text']") }
@@ -25,8 +24,8 @@ class LoginPage {
     }
 
     emailLogin(){
-        let user_account = testdata['User_account']
-        let user_password = testdata['User_password']
+        let user_account = process.env.USER_NAME
+        let user_password = process.env.User_PASSWORD
         this.emailInput.setValue(user_account);
         this.passwordInput.setValue(user_password);
         this.signInButton.click();

@@ -9,7 +9,6 @@ class tagpanelPage {
         browser.pause(15000)
         let panelname = process.env.panelname
         let Panel_Serial_Number = process.env.Panel_Serial_Number
-        browser.debug()
         if (this.panelnametext[0].isDisplayed()){
             console.log("panel is exist, no need add")
         }else{

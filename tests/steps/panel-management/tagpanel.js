@@ -3,8 +3,8 @@ import LoginPage from '../../page-objects/myPromethean/login-page'
 import tagpanelPage from '../../page-objects/panel-management/tagpanel';
 
 Given(/^I am on the panel page$/, function () {
-    var baseUrl = "https://panel-management.staging.mypromethean.com/"
-    LoginPage.visitLoginPage(baseUrl);
+    let PanelManagementUrl = process.env.Panel_management_url
+    LoginPage.visitLoginPage(PanelManagementUrl);
     LoginPage.emailLoginPage();
     LoginPage.emailLogin();
     LoginPage.verifyLogin();
