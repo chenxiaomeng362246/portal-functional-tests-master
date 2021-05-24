@@ -5,7 +5,7 @@ Given(/^I am on the panel-detail page$/, function () {
     editpaneldetailinfoPage.editthepaneldetailPage()
 });
 
-When(/^I modify panel detail$/, function () {
+When(/^I modify the panel name on panel detail$/, function () {
     editpaneldetailinfoPage.editthepaneldetail()
 });
 
