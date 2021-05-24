@@ -4,14 +4,14 @@ import homePage from '../../page-objects/myPromethean/home-page'
 import forgotpasswordPage from '../../page-objects/myPromethean/forgot-password';
 import changePassword from '../../page-objects/myPromethean/change-password';
 
-var baseUrl = "https://stagingportal.mypromethean.com/"
-var emailaddres = ""
+let PanelManagementUrl = process.env.MyPromethean_url
+let emailaddres = process.env.USER_NAME
 var erroremailcode = ""
 var newpassword = ""
 var invalidemailcode = ""
 
 Given(/^I am on the login page$/, function () {
-  LoginPage.visitLoginPage(baseUrl);
+  LoginPage.visitLoginPage(PanelManagementUrl);
   });
 
 Given(/^I am on MyPromethean home page$/, function () {

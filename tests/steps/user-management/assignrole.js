@@ -1,15 +1,5 @@
 import {Given, When, Then} from 'cucumber';
-import LoginPage from '../../page-objects/myPromethean/login-page';
 import assignrolePage from '../../page-objects/user-management/assign-role-page';
-
-Given(/^I am logged in usermangement page$/, function () {
-    browser.deleteCookies()
-    var baseUrl = "https://staging-user-management.mypromethean.com/"
-    LoginPage.visitLoginPage(baseUrl);
-    LoginPage.emailLoginPage();
-    LoginPage.emailLogin();
-    LoginPage.verifyLogin();
-});
 
 Given(/^I am on the user details page$/, function () {
     assignrolePage.searchPage();
