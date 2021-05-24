@@ -4,8 +4,8 @@ import usersearchPage from '../../page-objects/user-management/user-search-page'
 
 Given(/^I am logged in$/, function () {
     browser.deleteCookies()
-    var baseUrl = "https://staging-user-management.mypromethean.com/"
-    LoginPage.visitLoginPage(baseUrl);
+    let PanelManagementUrl = process.env.User_management_url
+    LoginPage.visitLoginPage(PanelManagementUrl);
     LoginPage.emailLoginPage();
     LoginPage.emailLogin();
     LoginPage.verifyLogin();

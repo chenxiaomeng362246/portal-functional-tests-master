@@ -21,7 +21,8 @@
     "@wdio/selenium-standalone-service": "^6.11.0",
     "@wdio/spec-reporter": "^6.11.0",
     "@wdio/sync": "^6.11.0",
-    "allure-commandline": "^2.13.8"
+    "allure-commandline": "^2.13.8",
+    "dotenv": "^9.0.2"
   },
   "babel": {
     "presets": [

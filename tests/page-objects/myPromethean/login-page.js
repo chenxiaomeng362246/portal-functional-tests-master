@@ -24,8 +24,10 @@ class LoginPage {
     }
 
     emailLogin(){
-        this.emailInput.setValue("");
-        this.passwordInput.setValue("");
+        let user_account = process.env.USER_NAME
+        let user_password = process.env.User_PASSWORD
+        this.emailInput.setValue(user_account);
+        this.passwordInput.setValue(user_password);
         this.signInButton.click();
     }
 

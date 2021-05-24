@@ -210,6 +210,7 @@ exports.config = {
      */
     before() {
         browser.maximizeWindow(); //set window to max size
+        require('dotenv').config() //Initialize environment information
     },
     /**
      * Runs before a WebdriverIO command gets executed.

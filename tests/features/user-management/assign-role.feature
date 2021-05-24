@@ -1,6 +1,6 @@
 Feature: Assign role
     Background: 
-        Given I am logged in usermangement page
+        Given I am logged in
 # PORT-2178
     Scenario: Assign role in usermangement
     And I am on the user details page
