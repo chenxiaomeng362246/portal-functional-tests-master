@@ -6,6 +6,6 @@ Feature: editpaneldetail
 # PORT-2360
     Scenario: Panel details page-Edit
     And I am on the panel-detail page
-    When I modify panel detail
+    When I modify the panel name on panel detail
     Then panel detail has been modified successfully
 
