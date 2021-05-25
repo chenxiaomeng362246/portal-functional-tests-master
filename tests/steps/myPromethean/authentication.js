@@ -6,9 +6,9 @@ import changePassword from '../../page-objects/myPromethean/change-password';
 
 let PanelManagementUrl = process.env.MyPromethean_url
 let emailaddres = process.env.USER_NAME
-var erroremailcode = ""
-var newpassword = ""
-var invalidemailcode = ""
+let erroremailcode = process.env.Erroremailcode
+let newpassword = process.env.Newpassword
+let invalidemailcode = process.env.Invalidemailcode
 
 Given(/^I am on the login page$/, function () {
   LoginPage.visitLoginPage(PanelManagementUrl);

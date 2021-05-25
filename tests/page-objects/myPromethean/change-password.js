@@ -1,6 +1,6 @@
 import homepage from '../../page-objects/myPromethean/home-page';
 class changepasswordPage {
-    get changepasswordButton() { return $("//span[contains(text(),'Change Password')]")}
+    get changepasswordButton() { return $("//span[contains(text(),'Change password')]")}
     get previouspasswordInput() { return $("input[name='previousPassword']") }
     get newpasswordInput() { return $("input[name='newPassword']") }
     get newpasswordconfirmInput() { return $("input[name='newPasswordConfirm']") }
@@ -15,19 +15,21 @@ class changepasswordPage {
     }
 
     typenewpasswordpage(){
+        let emailaddres = process.env.User_PASSWORD
         browser.pause(2000)
-        this.previouspasswordInput.setValue("")
+        this.previouspasswordInput.setValue(emailaddres)
         browser.pause(1000)
-        this.newpasswordInput.setValue("")
+        this.newpasswordInput.setValue(emailaddres)
         browser.pause(1000)
-        this.newpasswordconfirmInput.setValue("")
+        this.newpasswordconfirmInput.setValue(emailaddres)
     }
 
     verifynewpasswordpage(){
         browser.pause(2000)
         this.saveButton.click()
         browser.pause(5000)
-        this.changepasswordText.isDisplayed()
+        const assert = require('assert')
+        assert.strictEqual(this.changepasswordText.isDisplayed(),true)
     }
 }
 
