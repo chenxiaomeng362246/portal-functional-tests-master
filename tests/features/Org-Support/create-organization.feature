@@ -4,6 +4,6 @@ Feature: create organization
 
 #  PORT-2199
     Scenario: Create new Organization
-    When I am on the Promethean World page
+    When I am on the create Organization page
     And I create a new Organization
     Then new organization is created
