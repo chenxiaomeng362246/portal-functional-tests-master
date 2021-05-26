@@ -1,5 +1,6 @@
 import tagmanagementPage from '../../page-objects/panel-management/tagmanagement'
 import EnrolPage from '../../page-objects/panel-management/enrol-page'
+
 class tagpanelPage {
 
     get devicenametext(){ return  $("//span[contains(text(),'abbasHome')]")}
@@ -8,18 +9,21 @@ class tagpanelPage {
     get addtagpaneltext(){return $("//span[contains(text(),'Edited tag for selected panels')]") }
     get checktaghasaddedtext(){ return $$("//span[contains(@class, 'MuiIconButton-colorSecondary')]")}
     get canceltagbutton() { return $("button[class='portal-button--secondary']") }
-    get droptaggrouglistbutton(){ return  $("//span[contains(text(),'Tag group:  aaaa')]")}
+    get droptaggrouglistbutton(){ return  $("//span[contains(text(),'Tag group:  bbbb')]")}
     get droptag2(){ return $$("//span[contains(text(),'test_tag2')]")[0]}
 
     checkpanelinfo(){
         browser.pause(15000)
+
         if (this.devicenametext.isDisplayed()){
             console.log("panel is exist, no need add")
         }else{
             tagmanagementPage.dropaddButton.click()
             EnrolPage.TypemanuallyPage()
-            EnrolPage.panelNameBox.setValue("abbasHome");
-            EnrolPage.serialNumber.setValue("75W25-K1HL2E0760075");
+            let Panelname_Abbas = process.env.Panelname
+            let Panel_Serial_Number_Abbas = process.env.Panel_Serial_Number
+            EnrolPage.panelNameBox.setValue(Panelname_Abbas);
+            EnrolPage.serialNumber.setValue(Panel_Serial_Number_Abbas);
             browser.pause(2000)
             EnrolPage.nextuplodButton.click();
             browser.pause(2000);
