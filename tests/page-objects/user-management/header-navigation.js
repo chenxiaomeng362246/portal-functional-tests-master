@@ -16,27 +16,27 @@ class UsermanagementPage {
         this.appsdropdownButton.waitForClickable()
         this.appsdropdownButton.click()
         this.myPrometheanButton.click()
-        browser.switchWindow("stagingportal")
+        browser.switchWindow("portal.staging")
         browser.pause(10000)
         assert(this.myPrometheanlogoText.isDisplayed(), true);
         assert(this.getconnectedText.isDisplayed(), true);
         this.myprometheanappsdropdownButton.click()
         this.usermanagementappButton.click()
         browser.pause(5000)
-        browser.switchWindow("staging-user-management")
+        browser.switchWindow("user-management.staging")
         assert(this.usermanagementlogoText.isDisplayed(), true);
     }
 
     switchtopanelmanagementappPage(){
         browser.pause(5000)
         this.panelmanagementappButton.click()
-        browser.switchWindow("staging-panel-management")
+        browser.switchWindow("panel-management.staging")
         browser.pause(10000)
         assert(this.panelmanagementlogoText.isDisplayed(), true);
         this.appsdropdownButton.click()
         this.usermanagementappButton.click()
         browser.pause(5000)
-        browser.switchWindow("staging-user-management")
+        browser.switchWindow("user-management.staging")
         assert(this.usermanagementlogoText.isDisplayed(), true);
     }
 }

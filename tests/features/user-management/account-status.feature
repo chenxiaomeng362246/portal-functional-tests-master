@@ -1,6 +1,6 @@
 Feature: account status
     Background: 
-        Given I am logged in usermangement page
+        Given I am logged in
 
 # PORT-2180
     Scenario: Suspend user in usermangement
