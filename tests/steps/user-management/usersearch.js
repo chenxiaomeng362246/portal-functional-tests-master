@@ -4,8 +4,8 @@ import usersearchPage from '../../page-objects/user-management/user-search-page'
 
 Given(/^I am logged in$/, function () {
     browser.deleteCookies()
-    let PanelManagementUrl = process.env.User_management_url
-    LoginPage.visitLoginPage(PanelManagementUrl);
+    let UsermanagementUrl = process.env.User_management_url
+    LoginPage.visitLoginPage(UsermanagementUrl);
     LoginPage.emailLoginPage();
     LoginPage.emailLogin();
     LoginPage.verifyLogin();

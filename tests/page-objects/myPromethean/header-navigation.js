@@ -13,7 +13,8 @@ class myPrometheanPage {
     switchtousermanagementappPage(){
         headernavigationPage.usermanagementappButton.click()
         browser.pause(5000)
-        browser.switchWindow("user-management.staging")
+        let UserManagementUrl = process.env.User_management_url
+        browser.switchWindow(UserManagementUrl)
         browser.pause(5000)
         const assert = require('assert')
         assert.strictEqual(headernavigationPage.usermanagementlogoText.isDisplayed(),true)
@@ -22,7 +23,8 @@ class myPrometheanPage {
     switchtopanelmanagementappPage(){
         browser.pause(5000)
         headernavigationPage.panelmanagementappButton.click()
-        browser.switchWindow("panel-management.staging")
+        let PanelManagementUrl = process.env.Panel_management_url
+        browser.switchWindow(PanelManagementUrl)
         browser.pause(10000)
         const assert = require('assert')
         assert.strictEqual(headernavigationPage.panelmanagementlogoText.isDisplayed(),true)
@@ -31,7 +33,8 @@ class myPrometheanPage {
     switchtoresourcelibraryappPage(){
         browser.pause(5000)
         this.resourcelibraryButton.click()
-        browser.switchWindow("resourcelibrary.staging")
+        let resourcelibraryUrl = process.env.Resourcelibrary_url
+        browser.switchWindow(resourcelibraryUrl)
         browser.pause(10000)
         const assert = require('assert')
         assert.strictEqual(this.resourcelibrarylogoText.isDisplayed(),true)
