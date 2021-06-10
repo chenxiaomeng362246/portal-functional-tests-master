@@ -34,7 +34,7 @@ class EnrolPage {
             browser.pause(10000)
             browser.refresh()
         }
-        this.dropdownButton.waitForClickable({timeout: 300000 })
+        this.dropdownButton.waitForClickable({timeout: 30000 })
         this.dropdownButton.click()
 
     }
