@@ -1,7 +1,7 @@
 class homePage {
 
     get dropdownIcon() { return $("span.icon-profile.dropdown-icon") }
-    get signoutButton() { return $("//span[contains(text(),'Sign Out')]")}
+    get signoutButton() { return $("//span[contains(text(),'Sign out')]")}
 
 
     clickSignout(){

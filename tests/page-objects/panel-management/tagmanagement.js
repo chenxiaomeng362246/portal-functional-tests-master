@@ -4,8 +4,8 @@ class tagmanagementPage {
     get tagButton() { return $$("//a")[1] }
     get dropaddButton() { return $("div[data-testid = 'command-button-large']") }
     get checkboxaddgroupButton() { return $$("span[class='MuiIconButton-label']") }
-    get groupnameInput() { return $$("input[type*='text']")[1] }
-    get tagnameInput() { return $$("input[type*='text']")[2] }
+    get groupnameInput() { return $$("input[type*='text']")[0] }
+    get tagnameInput() { return $$("input[type*='text']")[1] }
     get savetagbutton() { return $("button[class='portal-button--primary']") }
     get tagaddedtext() { return $("//span[contains(text(),'has been added.')]") }
     get tagaddedname(){return $("//span[contains(text(),'test_tag')]") }
@@ -17,7 +17,7 @@ class tagmanagementPage {
     entertagpage(){
         browser.pause(15000)
         this.tagButton.click()
-        browser.pause(5000)
+        browser.pause(7000)
     }
 
     addtagpage(){
@@ -47,12 +47,12 @@ class tagmanagementPage {
         this.dropaddButton.click()
         browser.pause(3000)
         this.deletebutton.click()
-        browser.pause(5000)
+        browser.pause(7000)
         this.savetagbutton.click()
     }
 
     verifytagdeletedtext(){
-        browser.pause(5000)
+        browser.pause(7000)
         assert(this.tagdeletedtext.isDisplayed(), true);
     }
 

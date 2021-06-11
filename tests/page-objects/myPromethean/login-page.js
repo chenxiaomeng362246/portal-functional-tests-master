@@ -10,13 +10,14 @@ class LoginPage {
     visitLoginPage(baseUrl){
         browser.deleteCookies();
         browser.url(baseUrl);
-        browser.pause(18000)
+        browser.pause(15000)
         if (this.cookieButton.isDisplayed){
             this.cookieButton.click();
         }
     }
 
     emailLoginPage(){
+        browser.pause(5000);
         if (
             this.emailButton.isExisting()){
             this.emailButton.click();
@@ -32,12 +33,14 @@ class LoginPage {
     }
 
     verifyLogin(){
+        browser.pause(12000);
         this.appButton.isClickable();
     }
 
     verifySignout(){
         browser.pause(10000);
-        this.emailButton.isDisplayed();
+        const assert = require('assert')
+        assert.strictEqual(this.emailButton.isDisplayed(),true)
     }
 
     createaccountpage(){

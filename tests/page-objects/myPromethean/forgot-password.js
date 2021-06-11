@@ -37,14 +37,16 @@ class forgotpasswordPage {
         browser.pause(1000)
         this.resetpasswordInput.click()
         browser.pause(5000)
-        assert(this.erroremailcodetext.isDisplayed(), true);
+        const assert = require('assert')
+        assert.strictEqual(this.erroremailcodetext.isDisplayed(),true)
     }
 
     verifyinvalidpromptPage(){
         browser.pause(1000)
         this.resetpasswordInput.click()
         browser.pause(5000)
-        assert(this.invalidemailcodetext.isDisplayed(), true);
+        const assert = require('assert')
+        assert.strictEqual(this.invalidemailcodetext.isDisplayed(),true)
     }
 }
 

@@ -3,11 +3,7 @@ class UsersearchPage {
     get typeusersearch() { return $("input[placeholder='Search']") }
     get searchButton() { return $("[data-icon='search']") }
     get activitylogButton() { return $$("a[style]")[1] }
-    get usermanagementappButton() { return $("//div[text()='User Management']") }
-    get usermanagementlogoText() { return $("//span[text()='User Management']") }
-    get panelmanagementappButton() { return $("//div[text()='Panel Management']") }
-    get panelmanagementlogoText() { return $("//span[text()='Panel Management']") }
-    get usernameText(){return $("div[class='portal-table-cell-wrapper ant-table-column-has-actions ant-table-column-has-sorters ant-table-column-sort']")}
+    get usernameText(){return $$("//span[contains(text(),'chenrj')]")[1]}
     get ndchenrjusernameText() { return $("//div[text()='nd chenrj']") }
 
     verifyusersearchPage(){

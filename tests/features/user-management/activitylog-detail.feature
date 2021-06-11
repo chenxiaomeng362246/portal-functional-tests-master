@@ -1,6 +1,6 @@
 Feature: Activity log detail
     Background: 
-        Given I am logged in usermangement page
+        Given I am logged in
 
 # PORT-2185
     Scenario: User activity log detail in usermangement

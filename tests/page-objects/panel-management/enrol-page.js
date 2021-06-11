@@ -1,7 +1,7 @@
 class EnrolPage {
 
-    get dropdownButton() { return $("//button[@class = 'ant-dropdown-trigger']") }
-    get enrolButton() { return $("//span[text()='Enrol']") }
+    get dropdownButton() { return $("span[class = 'ant-page-header-heading-extra']") }
+    get enrolButton() { return $("//span[text()='Enroll']") }
     get importCSVButton() { return $("//h3[text()='Import from CSV file']") }
     get uploadCSVButton() { return $("input[type='file']") }
     get checkenrolText() { return $("//div[text()='1 panel was enrolled successfully']") }
@@ -11,16 +11,17 @@ class EnrolPage {
     get clickcheckbox() { return $(".ant-table-body input") }
     get typesearch() { return $("input[placeholder='Search panels...']") }
     get searchButton() { return $("[data-icon='search']") }
-    get unenrolButton() { return $("//span[text()='Unenrol']") }
+    get unenrolButton() { return $("//span[text()='Unenroll']") }
     get checkunenrolButton() { return $("button.portal-button--primary")}
     get checkunenrolText() { return $("//span[text()='Successfully unenrolled panel']") }
     get TypemanuallyButton() { return $("//h3[text()='Type it in manually']") }
-    get panelNameBox() { return $$("input[type='text']")[2] }
-    get serialNumber() { return $$("input[type='text']")[3] }
+    get panelNameBox() { return $$("input[type='text']")[1] }
+    get serialNumber() { return $$("input[type='text']")[2] }
 
     visitEnrolPage(){
         browser.pause(15000)
-        this.typesearch.setValue("786T")
+        let Panel_Serial_Number_Nickel = process.env.Panel_Serial_Number_Nickel
+        this.typesearch.setValue(Panel_Serial_Number_Nickel)
         browser.pause(2000)
         this.searchButton.click()
         browser.pause(7000)
@@ -67,7 +68,8 @@ class EnrolPage {
     }
 
     IntounenrolPage(){
-        this.typesearch.setValue("786T")
+        let Panel_Serial_Number_Nickel = process.env.Panel_Serial_Number_Nickel
+        this.typesearch.setValue(Panel_Serial_Number_Nickel)
         this.searchButton.click()
         browser.pause(3000)
         this.clickcheckbox.click()
@@ -97,8 +99,10 @@ class EnrolPage {
     }
 
     EnrolmanuallyPage(){
-        this.panelNameBox.setValue("786T-J62L3R2760007-env-orstaging");
-        this.serialNumber.setValue("786T-J62L3R2760007");
+        let Panel_Serial_Number_Nickel = process.env.Panel_Serial_Number_Nickel
+        let Panelname_Nickel = process.env.Panelname_Nickel
+        this.panelNameBox.setValue(Panelname_Nickel);
+        this.serialNumber.setValue(Panel_Serial_Number_Nickel);
         browser.pause(2000)
         this.nextuplodButton.click();
         browser.pause(2000);

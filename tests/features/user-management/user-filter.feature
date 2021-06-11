@@ -1,6 +1,6 @@
 Feature: User Filter
     Background: 
-        Given I am logged in usermangement page
+        Given I am logged in
 
 # PORT-2182
     Scenario: User Filter in usermangement

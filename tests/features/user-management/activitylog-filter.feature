@@ -1,6 +1,6 @@
 Feature: Activity log Filter
     Background: 
-        Given I am logged in usermangement page
+        Given I am logged in
 
 # PORT-2183
     Scenario: activity log Filter in usermangement
