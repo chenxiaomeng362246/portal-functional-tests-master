@@ -1,3 +1,5 @@
+
+import tagpanelPage from '../../page-objects/panel-management/searchpanel'
 class EnrolPage {
 
     get dropdownButton() { return $("span[class = 'ant-page-header-heading-extra']") }
@@ -19,33 +21,33 @@ class EnrolPage {
     get serialNumber() { return $$("input[type='text']")[2] }
 
     visitEnrolPage(){
-        browser.pause(15000)
+        browser.waitUntil(() => this.typesearch.isClickable()===true,{timeout: 20000})
         let Panel_Serial_Number_Nickel = process.env.Panel_Serial_Number_Nickel
         this.typesearch.setValue(Panel_Serial_Number_Nickel)
         browser.pause(2000)
         this.searchButton.click()
-        browser.pause(7000)
+        browser.waitUntil(() => tagpanelPage.panelinfolist.isClickable()===true,{timeout: 20000})
         if(this.checklinebox.isDisplayed()){
             this.clickcheckbox.click()
             this.dropdownButton.click()
             this.unenrolButton.waitForClickable({ timeout: 10000 })
             this.unenrolButton.click()
             this.unenrolPage()
-            browser.pause(10000)
+            browser.pause(3000)
             browser.refresh()
         }
-        this.dropdownButton.waitForClickable({timeout: 30000 })
+        browser.waitUntil(() => this.dropdownButton.isClickable()===true,{timeout: 20000})
         this.dropdownButton.click()
 
     }
 
     clickIntoEnrolPage(){
-        this.enrolButton.waitForClickable({ timeout: 5000 })
+        browser.waitUntil(() => this.enrolButton.isClickable()===true,{timeout: 20000})
         this.enrolButton.click();
     }
 
     importCSVPage(){
-        this.importCSVButton.waitForClickable({timeout: 3000 })
+        browser.waitUntil(() => this.importCSVButton.isClickable()===true,{timeout: 20000})
         this.importCSVButton.click();
     }
 
@@ -55,7 +57,7 @@ class EnrolPage {
         //Relative path of enrol csv file
         browser.pause(2000)
         this.uploadCSVButton.setValue(file_path)
-        this.nextuplodButton.waitForClickable({ timeout: 10000 })
+        browser.waitUntil(() => this.nextuplodButton.isClickable()===true,{timeout: 20000})
         this.nextuplodButton.click()
     }
 
@@ -85,7 +87,7 @@ class EnrolPage {
 
     verifyunenrolPage(){
         var assert = require('assert')
-        browser.pause(7000)
+        browser.waitUntil(() => this.checkunenrolText.isDisplayed()===true,{timeout: 20000})
         assert(this.checkunenrolText.isDisplayed(), true);
         browser.deleteCookies()
     }
@@ -93,8 +95,7 @@ class EnrolPage {
     TypemanuallyPage(){
         this.enrolButton.waitForClickable({ timeout: 5000 });
         this.enrolButton.click();
-        browser.pause(7000)
-        this.TypemanuallyButton.waitForClickable({timeout: 20000 });
+        browser.waitUntil(() => this.TypemanuallyButton.isClickable()===true,{timeout: 20000})
         this.TypemanuallyButton.click();
     }
 
@@ -112,7 +113,7 @@ class EnrolPage {
         this.TypemanuallyPage()
         this.EnrolmanuallyPage()
         browser.refresh()
-        browser.pause(10000)
+        browser.waitUntil(() => this.dropdownButton.isClickable()===true,{timeout: 20000})
     }
 
 }

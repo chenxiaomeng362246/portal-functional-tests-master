@@ -9,13 +9,14 @@ class ActivitylogdetailPage {
     get activitylogdetailactivityinfo() { return $("//tbody/tr[1]/td[3]/div") }  
     
     activityloguserpage(){
-        browser.pause(12000)
+        browser.waitUntil(() => this.nduserText.isClickable()===true,{timeout: 20000})
         this.nduserText.click()
         browser.pause(3000)
         assert(this.ActivitylogText.isDisplayed(), true);
     }
     
     verifyactivitylogdetailtables(){
+        browser.waitUntil(() => this.datetimeButton.isClickable()===true,{timeout: 20000})
         this.datetimeButton.click()
         browser.pause(2000)
         assert(this.ActivitylogText.isDisplayed(), true);

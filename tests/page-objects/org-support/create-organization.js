@@ -9,12 +9,12 @@ class createorgPage {
     get existeddomainText() { return $("//div[contains(text(),'This domain is being used by another organization')]")}
 
     Createneworganizationbutton(){
-        browser.pause(7000)
+        browser.waitUntil(() => this.createorgazizationButton.isClickable()===true,{timeout: 20000})
         this.createorgazizationButton.click()
     }
 
     Createneworganizationpage(){
-        browser.pause(7000)
+        browser.waitUntil(() => this.organizationNameInput.isClickable()===true,{timeout: 20000})
         this.organizationNameInput.setValue(Commonmethods.randomString())
         this.organizationDomainInput.setValue("nd.com.cn")
         browser.pause(1000)
@@ -22,7 +22,7 @@ class createorgPage {
     }
 
     verifycreateorganization(){
-        browser.pause(5000)
+        browser.waitUntil(() => this.existeddomainText.isDisplayed()===true,{timeout: 20000})
         const assert = require('assert')
         assert.strictEqual(this.existeddomainText.isDisplayed(),true)
     }

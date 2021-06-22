@@ -21,14 +21,14 @@ class editprofilePage {
     get editUKlanguageprofileButton() { return $("//li[contains(text(),'Edit Profile')]")}
 
     entereditprofilepage(){
-        browser.pause(15000)
+        browser.waitUntil(() => homepage.dropdownIcon.isClickable()===true,{timeout: 20000})
         homepage.dropdownIcon.click()
-        browser.pause(5000)
+        browser.waitUntil(() => this.editprofileButton.isClickable()===true,{timeout: 20000})
         this.editprofileButton.click()
     }
 
     editprofilepage(option){
-        browser.pause(5000)
+        browser.waitUntil(() => this.fristnameInput.isDisplayed()===true,{timeout: 20000})
         if(option =="firstName"){
             this.fristnameInput.clearValue()
             browser.pause(2000)
@@ -68,9 +68,9 @@ class editprofilePage {
     }
     
     verifynewpasswordpage(){
-        browser.pause(5000)
+        browser.waitUntil(() => this.saveeditprofileButton.isClickable()===true,{timeout: 20000})
         this.saveeditprofileButton.click()
-        browser.pause(9000)
+        browser.waitUntil(() => this.editprofileText.isDisplayed()===true,{timeout: 20000})
         const assert = require('assert')
         assert.strictEqual(this.editprofileText.isDisplayed(),true)
     }
@@ -78,9 +78,9 @@ class editprofilePage {
     changethelanguagetoUS(){
         this.verifynewpasswordpage()
         browser.refresh()
-        browser.pause(12000)
+        browser.waitUntil(() => homepage.dropdownIcon.isClickable()===true,{timeout: 20000})
         homepage.dropdownIcon.click()
-        browser.pause(5000)
+        browser.waitUntil(() => this.editUKlanguageprofileButton.isClickable()===true,{timeout: 20000})
         this.editUKlanguageprofileButton.click()
         this.languagedropbutton.click()
         browser.pause(2000)
