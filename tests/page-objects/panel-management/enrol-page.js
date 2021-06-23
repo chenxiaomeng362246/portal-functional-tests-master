@@ -19,6 +19,7 @@ class EnrolPage {
     get TypemanuallyButton() { return $("//h3[text()='Type it in manually']") }
     get panelNameBox() { return $$("input[type='text']")[1] }
     get serialNumber() { return $$("input[type='text']")[2] }
+    get panelsrefreshbutton(){return $("div[class='refresh-button']")}
 
     visitEnrolPage(){
         browser.waitUntil(() => this.typesearch.isClickable()===true,{timeout: 20000})
@@ -26,7 +27,7 @@ class EnrolPage {
         this.typesearch.setValue(Panel_Serial_Number_Nickel)
         browser.pause(2000)
         this.searchButton.click()
-        browser.waitUntil(() => tagpanelPage.panelinfolist.isClickable()===true,{timeout: 20000})
+        browser.waitUntil(() => this.panelsrefreshbutton.isClickable()===true,{timeout: 20000})
         if(this.checklinebox.isDisplayed()){
             this.clickcheckbox.click()
             this.dropdownButton.click()

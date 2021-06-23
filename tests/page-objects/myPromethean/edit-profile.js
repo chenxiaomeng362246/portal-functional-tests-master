@@ -78,10 +78,12 @@ class editprofilePage {
     changethelanguagetoUS(){
         this.verifynewpasswordpage()
         browser.refresh()
+        browser.pause(2000)
         browser.waitUntil(() => homepage.dropdownIcon.isClickable()===true,{timeout: 20000})
         homepage.dropdownIcon.click()
         browser.waitUntil(() => this.editUKlanguageprofileButton.isClickable()===true,{timeout: 20000})
         this.editUKlanguageprofileButton.click()
+        browser.waitUntil(() => this.languagedropbutton.isClickable()===true,{timeout: 20000})
         this.languagedropbutton.click()
         browser.pause(2000)
         this.USlanguagecacountryInput.click()
