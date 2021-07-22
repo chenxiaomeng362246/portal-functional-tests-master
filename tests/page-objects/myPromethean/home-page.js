@@ -5,9 +5,10 @@ class homePage {
 
 
     clickSignout(){
-        browser.pause(15000);
+        browser.waitUntil(() => this.dropdownIcon.isDisplayedInViewport()===true,{timeout: 20000});
         this.dropdownIcon.click();
-        browser.pause(5000);
+        browser.pause(2000)
+        browser.waitUntil(() => this.signoutButton.isDisplayedInViewport()===true,{timeout: 20000});
         this.signoutButton.click();
     }
 }

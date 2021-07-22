@@ -12,35 +12,37 @@ class UsermanagementPage {
     get panelmanagementlogoText() { return $("//span[text()='Panel Management']") }
 
     switchtomyPrometheanappPage(){
-        browser.pause(12000)
+        browser.waitUntil(() => this.appsdropdownButton.isClickable()===true,{timeout: 20000})
         this.appsdropdownButton.waitForClickable()
         this.appsdropdownButton.click()
         this.myPrometheanButton.click()
         let MyPrometheanurl = process.env.MyPromethean_url
         browser.switchWindow(MyPrometheanurl)
-        browser.pause(10000)
+        browser.waitUntil(() => this.myPrometheanlogoText.isDisplayed()===true,{timeout: 20000})
         assert(this.myPrometheanlogoText.isDisplayed(), true);
         assert(this.getconnectedText.isDisplayed(), true);
+        browser.waitUntil(() => this.myprometheanappsdropdownButton.isClickable()===true,{timeout: 20000})
         this.myprometheanappsdropdownButton.click()
         this.usermanagementappButton.click()
-        browser.pause(5000)
         let UserManagementUrl = process.env.User_management_url
         browser.switchWindow(UserManagementUrl)
+        browser.waitUntil(() => this.usermanagementlogoText.isDisplayed()===true,{timeout: 20000})
         assert(this.usermanagementlogoText.isDisplayed(), true);
     }
 
     switchtopanelmanagementappPage(){
-        browser.pause(5000)
+        browser.pause(3000)
         this.panelmanagementappButton.click()
         let PanelManagementUrl = process.env.Panel_management_url
         browser.switchWindow(PanelManagementUrl)
-        browser.pause(10000)
+        browser.waitUntil(() => this.panelmanagementlogoText.isDisplayed()===true,{timeout: 20000})
         assert(this.panelmanagementlogoText.isDisplayed(), true);
+        browser.waitUntil(() => this.appsdropdownButton.isClickable()===true,{timeout: 20000})
         this.appsdropdownButton.click()
         this.usermanagementappButton.click()
-        browser.pause(5000)
         let UserManagementUrl = process.env.User_management_url
         browser.switchWindow(UserManagementUrl)
+        browser.waitUntil(() => this.usermanagementlogoText.isDisplayed()===true,{timeout: 20000})
         assert(this.usermanagementlogoText.isDisplayed(), true);
     }
 }

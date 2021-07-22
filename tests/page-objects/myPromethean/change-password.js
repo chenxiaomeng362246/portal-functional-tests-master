@@ -8,26 +8,24 @@ class changepasswordPage {
     get changepasswordText() { return $("//span[contains(text(),'Password has been successfully changed.')]")}
 
     enterchangepasswordpage(){
-        browser.pause(15000)
+        browser.waitUntil(() => homepage.dropdownIcon.isClickable()===true,{timeout: 20000})
         homepage.dropdownIcon.click()
-        browser.pause(5000)
+        browser.waitUntil(() => this.changepasswordButton.isClickable()===true,{timeout: 20000})
         this.changepasswordButton.click()
     }
 
     typenewpasswordpage(){
         let emailaddres = process.env.User_PASSWORD
-        browser.pause(2000)
+        browser.waitUntil(() => this.previouspasswordInput.isClickable()===true,{timeout: 20000})
         this.previouspasswordInput.setValue(emailaddres)
-        browser.pause(1000)
         this.newpasswordInput.setValue(emailaddres)
-        browser.pause(1000)
         this.newpasswordconfirmInput.setValue(emailaddres)
     }
 
     verifynewpasswordpage(){
-        browser.pause(2000)
+        browser.waitUntil(() => this.saveButton.isClickable()===true,{timeout: 20000})
         this.saveButton.click()
-        browser.pause(5000)
+        browser.waitUntil(() => this.changepasswordText.isDisplayed()===true,{timeout: 20000})
         const assert = require('assert')
         assert.strictEqual(this.changepasswordText.isDisplayed(),true)
     }

@@ -1,5 +1,6 @@
 import tagmanagementPage from '../../page-objects/panel-management/tagmanagement'
 import EnrolPage from '../../page-objects/panel-management/enrol-page'
+import SearchPage from '../../page-objects/panel-management/searchpanel'
 
 class tagpanelPage {
 
@@ -13,8 +14,7 @@ class tagpanelPage {
     get droptag2(){ return $$("//span[contains(text(),'test_tag2')]")[0]}
 
     checkpanelinfo(){
-        browser.pause(15000)
-
+        browser.waitUntil(() => SearchPage.panellistrefreshbutton.isDisplayed()===true,{timeout: 20000})
         if (this.devicenametext.isDisplayed()){
             console.log("panel is exist, no need add")
         }else{
@@ -28,7 +28,7 @@ class tagpanelPage {
             EnrolPage.nextuplodButton.click();
             browser.pause(2000);
             browser.refresh()
-            browser.pause(10000)
+            browser.waitUntil(() => SearchPage.panellistrefreshbutton.isDisplayed()===true,{timeout: 20000})
         }
         EnrolPage.clickcheckbox.click()
     }
@@ -36,22 +36,24 @@ class tagpanelPage {
     Managetagspage(){
         browser.pause(2000)
         tagmanagementPage.dropaddButton.click()
-        browser.pause(4000)
+        browser.waitUntil(() => this.Managetagsbutton.isDisplayed()===true,{timeout: 20000})
         this.Managetagsbutton.click()
-        browser.pause(6000)
+
     }
 
     assigntagtopanel(){
+        browser.waitUntil(() => this.canceltagbutton.isClickable()===true,{timeout: 20000})
+        browser.pause(2000)
         if (this.checktaghasaddedtext.length==2){
             console.log("tag is exist, no need add it")
             this.canceltagbutton.click()
         }else{
-            browser.pause(5000)
             var a = this.tagcheckboxbutton.length
             this.tagcheckboxbutton[parseInt(a)-1].click()
-            browser.pause(5000)
+            browser.waitUntil(() => tagmanagementPage.savetagbutton.isClickable()===true,{timeout: 20000})
+            browser.pause(2000)
             tagmanagementPage.savetagbutton.click()
-            browser.pause(5000)
+            browser.waitUntil(() => this.addtagpaneltext.isDisplayed()===true,{timeout: 20000})
             const assert = require('assert');
             assert.strictEqual(this.addtagpaneltext.isDisplayed(), true);
             browser.refresh()
@@ -59,23 +61,26 @@ class tagpanelPage {
     }
 
     verifytagaddedtopaneltext(){
-        browser.pause(7000)
+        browser.waitUntil(() => SearchPage.panellistrefreshbutton.isDisplayed()===true,{timeout: 20000})
         this.droptaggrouglistbutton.click()
         browser.pause(2000)
         this.droptag2.click()
-        browser.pause(5000)
+        browser.waitUntil(() => this.devicenametext.isDisplayed()===true,{timeout: 20000})
         const assert = require('assert');
         assert.strictEqual(this.devicenametext.isDisplayed(),true)
     }
 
     removetagtopanel(){
+        browser.waitUntil(() => this.canceltagbutton.isClickable()===true,{timeout: 20000})
+        browser.pause(2000)
         if (this.checktaghasaddedtext.length==2){
             browser.pause(2000)
             var a = this.tagcheckboxbutton.length
             this.tagcheckboxbutton[parseInt(a)-1].click()
-            browser.pause(5000)
+            browser.waitUntil(() => tagmanagementPage.savetagbutton.isClickable()===true,{timeout: 20000})
+            browser.pause(2000)
             tagmanagementPage.savetagbutton.click()
-            browser.pause(5000)
+            browser.waitUntil(() => this.addtagpaneltext.isDisplayed()===true,{timeout: 20000})
             const assert = require('assert');
             assert.strictEqual(this.addtagpaneltext.isDisplayed(), true);
             browser.refresh()
@@ -86,11 +91,11 @@ class tagpanelPage {
     }
 
     verifytagremovetopaneltext(){
-        browser.pause(7000)
+        browser.waitUntil(() => SearchPage.panellistrefreshbutton.isDisplayed()===true,{timeout: 20000})
         this.droptaggrouglistbutton.click()
         browser.pause(2000)
         this.droptag2.click()
-        browser.pause(5000)
+        browser.pause(3000)
         const assert = require('assert');
         assert.strictEqual(this.devicenametext.isDisplayed(),false)
     }

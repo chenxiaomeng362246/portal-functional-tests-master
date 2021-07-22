@@ -6,14 +6,14 @@ class UserfilterPage {
     get chenrjuserText() { return $("//span[text()='chenrj']") }
     
     filteruser(){
-        browser.pause(12000)
+        browser.waitUntil(() => this.filteruserdropdownButton.isClickable()===true,{timeout: 20000})
         this.filteruserdropdownButton.click()
         browser.pause(1000)
         this.siteManagerText.click()
     }
 
     verifyfilteruser(){
-        browser.pause(4000)
+        browser.waitUntil(() => this.chenrjuserText.isDisplayed()===true,{timeout: 20000})
         assert(this.chenrjuserText.isDisplayed(), true);
         browser.deleteCookies()
     }

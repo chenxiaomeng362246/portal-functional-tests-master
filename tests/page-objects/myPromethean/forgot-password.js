@@ -12,39 +12,38 @@ class forgotpasswordPage {
     get returnresetpasswordpage(){return $("div[class='ant-modal-wrap ']")}
 
     enterforgotpasswordPage(){
-        browser.pause(1000)
-        this.forgotpasswordButton.waitForClickable()
+        browser.waitUntil(() => this.forgotpasswordButton.isClickable()===true,{timeout: 20000})
         this.forgotpasswordButton.click()
     }
 
     enteremailPage(emailaddres){
-        browser.pause(2000)
+        browser.waitUntil(() => this.forgotpasswordemailInput.isClickable()===true,{timeout: 20000})
         this.forgotpasswordemailInput.setValue(emailaddres);
-        browser.pause(1000)
+        browser.waitUntil(() => this.sendemailbutton.isClickable()===true,{timeout: 20000})
         this.sendemailbutton.click()
     }
 
     typeinformation(emailcode, newpassword){
-        browser.pause(7000)
+        browser.waitUntil(() => this.returnresetpasswordpage.isClickable()===true,{timeout: 20000})
+        browser.pause(2000)
         this.returnresetpasswordpage.click()
         this.verificationInput.setValue(emailcode);
         this.newpasswordInput.setValue(newpassword);
-        browser.pause(1000)
         this.confirmpasswordInput.setValue(newpassword);
     }
 
     verifyerrorpromptPage(){
-        browser.pause(1000)
+        browser.waitUntil(() => this.resetpasswordInput.isClickable()===true,{timeout: 20000})
         this.resetpasswordInput.click()
-        browser.pause(5000)
+        browser.waitUntil(() => this.erroremailcodetext.isDisplayed()===true,{timeout: 20000})
         const assert = require('assert')
         assert.strictEqual(this.erroremailcodetext.isDisplayed(),true)
     }
 
     verifyinvalidpromptPage(){
-        browser.pause(1000)
+        browser.waitUntil(() => this.resetpasswordInput.isClickable()===true,{timeout: 20000})
         this.resetpasswordInput.click()
-        browser.pause(5000)
+        browser.waitUntil(() => this.invalidemailcodetext.isDisplayed()===true,{timeout: 20000})
         const assert = require('assert')
         assert.strictEqual(this.invalidemailcodetext.isDisplayed(),true)
     }

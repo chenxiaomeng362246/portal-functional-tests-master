@@ -15,14 +15,15 @@ class tagmanagementPage {
     get tagdeletedtext() { return $("//p[contains(text(),'has been deleted')]") }
 
     entertagpage(){
-        browser.pause(15000)
+        browser.waitUntil(() => this.tagButton.isClickable()===true,{timeout: 20000})
         this.tagButton.click()
-        browser.pause(7000)
+        browser.pause(2000)
     }
 
     addtagpage(){
+        browser.pause(2000)
         this.dropaddButton.click()
-        browser.pause(6000)
+        browser.waitUntil(() => this.checkboxaddgroupButton[1].isClickable()===true,{timeout: 20000})
         var a = this.checkboxaddgroupButton.length
         this.checkboxaddgroupButton[parseInt(a)-1].click()
     }
@@ -36,7 +37,7 @@ class tagmanagementPage {
 
     verifytagaddedtext(){
         this.savetagbutton.click()
-        browser.pause(5000)
+        browser.waitUntil(() => this.tagaddedtext.isDisplayed()===true,{timeout: 20000})
         assert(this.tagaddedtext.isDisplayed(), true);
     }
     
@@ -47,12 +48,12 @@ class tagmanagementPage {
         this.dropaddButton.click()
         browser.pause(3000)
         this.deletebutton.click()
-        browser.pause(7000)
+        browser.waitUntil(() => this.savetagbutton.isClickable()===true,{timeout: 20000})
         this.savetagbutton.click()
     }
 
     verifytagdeletedtext(){
-        browser.pause(7000)
+        browser.waitUntil(() => this.tagdeletedtext.isDisplayed()===true,{timeout: 20000})
         assert(this.tagdeletedtext.isDisplayed(), true);
     }
 

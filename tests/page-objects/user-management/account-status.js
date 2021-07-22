@@ -20,8 +20,7 @@ class accountstatusPage {
     }
 
     manageroledetailPage(){
-        browser.pause(4000)
-        this.dropdownButton.waitForClickable({timeout: 30000 })
+        browser.waitUntil(() => this.dropdownButton.isClickable()===true,{timeout: 20000})
         this.dropdownButton.click()
     }
 
@@ -34,8 +33,9 @@ class accountstatusPage {
 
     verifysuspendPage(){
         var assert = require('assert')
-        browser.pause(6000)
+        browser.waitUntil(() => this.suspenduserText.isDisplayed()===true,{timeout: 20000})
         assert(this.suspenduserText.isDisplayed(), true);
+        browser.waitUntil(() => this.returnhomepageButton.isClickable()===true,{timeout: 20000})
         this.returnhomepageButton.click()
         browser.pause(3000)
         this.refreshButton.click()
@@ -45,7 +45,7 @@ class accountstatusPage {
     }
  
     verifyreturnhomepageButton(){
-        browser.pause(6000)
+        browser.waitUntil(() => this.returnhomepageButton.isClickable()===true,{timeout: 20000})
         this.returnhomepageButton.click()
         browser.pause(3000)
         this.refreshButton.click()
@@ -54,7 +54,7 @@ class accountstatusPage {
 
     verifyactivatedPage(){
         var assert = require('assert')
-        browser.pause(6000)
+        browser.waitUntil(() => this.activateduserText.isDisplayed()===true,{timeout: 20000})
         assert(this.activateduserText.isDisplayed(), true);
         this.returnhomepageButton.click()
         browser.pause(3000)

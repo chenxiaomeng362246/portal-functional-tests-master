@@ -8,13 +8,13 @@ class ActivitylogfilterPage {
     get verifyactivitystatustext() { return $$("div[class='portal-table-cell-wrapper ant-table-row-cell-break-word']")[0] }
     
     changetoactivitylog(){
-        browser.pause(12000)
+        browser.waitUntil(() => this.activitylogButton.isClickable()===true,{timeout: 20000})
         this.activitylogButton.click()
         browser.pause(1000)
     }
 
     filteractivitylog(){
-        browser.pause(5000)
+        browser.waitUntil(() => UserfilterPage.filteruserdropdownButton.isClickable()===true,{timeout: 20000})
         UserfilterPage.filteruserdropdownButton.click()
         browser.pause(1000)
         this.checkboxndchenrjuserText.click()
@@ -27,7 +27,7 @@ class ActivitylogfilterPage {
     }
 
     verifyactivitystatus(){
-        browser.pause(5000)
+        browser.waitUntil(() => this.verifyactivitystatustext.isDisplayed()===true,{timeout: 20000})
         assert(this.verifyactivitystatustext.getText(), "Account suspended");
         browser.deleteCookies()
     }

@@ -7,7 +7,7 @@ class UsersearchPage {
     get ndchenrjusernameText() { return $("//div[text()='nd chenrj']") }
 
     verifyusersearchPage(){
-        browser.pause(15000)
+        browser.waitUntil(() => this.typeusersearch.isClickable()===true,{timeout: 20000})
         this.typeusersearch.click()
         this.typeusersearch.setValue("chenrj")
         this.searchButton.click()
