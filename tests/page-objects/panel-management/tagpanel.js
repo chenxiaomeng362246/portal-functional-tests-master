@@ -1,6 +1,7 @@
 import tagmanagementPage from '../../page-objects/panel-management/tagmanagement'
 import EnrolPage from '../../page-objects/panel-management/enrol-page'
 import SearchPage from '../../page-objects/panel-management/searchpanel'
+import { CONFIG } from '../../../config'
 
 class tagpanelPage {
 
@@ -20,8 +21,8 @@ class tagpanelPage {
         }else{
             tagmanagementPage.dropaddButton.click()
             EnrolPage.TypemanuallyPage()
-            let Panelname_Abbas = process.env.Panelname
-            let Panel_Serial_Number_Abbas = process.env.Panel_Serial_Number
+            let Panelname_Abbas = CONFIG.Panelname
+            let Panel_Serial_Number_Abbas = CONFIG.Panel_Serial_Number
             EnrolPage.panelNameBox.setValue(Panelname_Abbas);
             EnrolPage.serialNumber.setValue(Panel_Serial_Number_Abbas);
             browser.pause(2000)

@@ -3,12 +3,13 @@ import LoginPage from '../../page-objects/myPromethean/login-page'
 import homePage from '../../page-objects/myPromethean/home-page'
 import forgotpasswordPage from '../../page-objects/myPromethean/forgot-password';
 import changePassword from '../../page-objects/myPromethean/change-password';
+import { CONFIG } from '../../../config';
 
-let PanelManagementUrl = process.env.MyPromethean_url
-let emailaddres = process.env.USER_NAME
-let erroremailcode = process.env.Erroremailcode
-let newpassword = process.env.Newpassword
-let invalidemailcode = process.env.Invalidemailcode
+let PanelManagementUrl = CONFIG.MyPromethean_url
+let emailaddres = CONFIG.USER_NAME
+let erroremailcode = CONFIG.Erroremailcode
+let newpassword = CONFIG.Newpassword
+let invalidemailcode = CONFIG.Invalidemailcode
 
 Given(/^I am on the login page$/, function () {
   LoginPage.visitLoginPage(PanelManagementUrl);

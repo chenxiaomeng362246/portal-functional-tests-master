@@ -1,5 +1,6 @@
 import tagmanagementPage from './tagmanagement'
 import Commonmethods from '../../utils/commonmethods';
+import { CONFIG } from '../../../config'
 class editpaneldetailinfoPage {
 
     get updatepanelnameinfotext(){ return  $("//span[contains(text(),'Updated panel name')]")}
@@ -7,7 +8,7 @@ class editpaneldetailinfoPage {
     get panelnameedit(){ return  $$("input[type='text']")[0]}
     get panelnameinfo(){return  $("//span[contains(text(),'Panel name')]")}
     get cobaltpanelnametext(){  
-        let Panel_Serial_Number_Cobalt = '"'+process.env.Panel_Serial_Number_Cobalt+'"'
+        let Panel_Serial_Number_Cobalt = '"'+CONFIG.Panel_Serial_Number_Cobalt+'"'
         var elementpanel = "tr[data-row-key = "+Panel_Serial_Number_Cobalt+"]"
         return  $(elementpanel)
     }

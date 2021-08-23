@@ -1,4 +1,5 @@
 import { assert } from 'console'
+import { CONFIG } from '../../../config'
 
 class UsermanagementPage {
     get appsdropdownButton() { return $("//span[text()='Apps']") }
@@ -16,7 +17,7 @@ class UsermanagementPage {
         this.appsdropdownButton.waitForClickable()
         this.appsdropdownButton.click()
         this.myPrometheanButton.click()
-        let MyPrometheanurl = process.env.MyPromethean_url
+        let MyPrometheanurl = CONFIG.MyPromethean_url
         browser.switchWindow(MyPrometheanurl)
         browser.waitUntil(() => this.myPrometheanlogoText.isDisplayed()===true,{timeout: 20000})
         assert(this.myPrometheanlogoText.isDisplayed(), true);
@@ -24,7 +25,7 @@ class UsermanagementPage {
         browser.waitUntil(() => this.myprometheanappsdropdownButton.isClickable()===true,{timeout: 20000})
         this.myprometheanappsdropdownButton.click()
         this.usermanagementappButton.click()
-        let UserManagementUrl = process.env.User_management_url
+        let UserManagementUrl = CONFIG.User_management_url
         browser.switchWindow(UserManagementUrl)
         browser.waitUntil(() => this.usermanagementlogoText.isDisplayed()===true,{timeout: 20000})
         assert(this.usermanagementlogoText.isDisplayed(), true);
@@ -33,14 +34,14 @@ class UsermanagementPage {
     switchtopanelmanagementappPage(){
         browser.pause(3000)
         this.panelmanagementappButton.click()
-        let PanelManagementUrl = process.env.Panel_management_url
+        let PanelManagementUrl = CONFIG.Panel_management_url
         browser.switchWindow(PanelManagementUrl)
         browser.waitUntil(() => this.panelmanagementlogoText.isDisplayed()===true,{timeout: 20000})
         assert(this.panelmanagementlogoText.isDisplayed(), true);
         browser.waitUntil(() => this.appsdropdownButton.isClickable()===true,{timeout: 20000})
         this.appsdropdownButton.click()
         this.usermanagementappButton.click()
-        let UserManagementUrl = process.env.User_management_url
+        let UserManagementUrl = CONFIG.User_management_url
         browser.switchWindow(UserManagementUrl)
         browser.waitUntil(() => this.usermanagementlogoText.isDisplayed()===true,{timeout: 20000})
         assert(this.usermanagementlogoText.isDisplayed(), true);

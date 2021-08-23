@@ -1,5 +1,6 @@
 
 import tagpanelPage from '../../page-objects/panel-management/searchpanel'
+import { CONFIG } from '../../../config'
 class EnrolPage {
 
     get dropdownButton() { return $("span[class = 'ant-page-header-heading-extra']") }
@@ -23,7 +24,7 @@ class EnrolPage {
 
     visitEnrolPage(){
         browser.waitUntil(() => this.typesearch.isClickable()===true,{timeout: 20000})
-        let Panel_Serial_Number_Nickel = process.env.Panel_Serial_Number_Nickel
+        let Panel_Serial_Number_Nickel = CONFIG.Panel_Serial_Number_Nickel
         this.typesearch.setValue(Panel_Serial_Number_Nickel)
         browser.pause(2000)
         this.searchButton.click()
@@ -71,7 +72,7 @@ class EnrolPage {
     }
 
     IntounenrolPage(){
-        let Panel_Serial_Number_Nickel = process.env.Panel_Serial_Number_Nickel
+        let Panel_Serial_Number_Nickel = CONFIG.Panel_Serial_Number_Nickel
         this.typesearch.setValue(Panel_Serial_Number_Nickel)
         this.searchButton.click()
         browser.pause(3000)
@@ -101,8 +102,8 @@ class EnrolPage {
     }
 
     EnrolmanuallyPage(){
-        let Panel_Serial_Number_Nickel = process.env.Panel_Serial_Number_Nickel
-        let Panelname_Nickel = process.env.Panelname_Nickel
+        let Panel_Serial_Number_Nickel = CONFIG.Panel_Serial_Number_Nickel
+        let Panelname_Nickel = CONFIG.Panelname_Nickel
         this.panelNameBox.setValue(Panelname_Nickel);
         this.serialNumber.setValue(Panel_Serial_Number_Nickel);
         browser.pause(2000)
