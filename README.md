@@ -21,3 +21,6 @@ npm test
 
 ## Contributing
 To write tests, refer [Test Design Guidelines](https://wiki.prometheanjira.com/display/PANM/Test+Design+Guidelines) and [Webdriver.io](https://webdriver.io/docs/api.html) documentation
+
+## Test Environment
+Change test environment in config.js
