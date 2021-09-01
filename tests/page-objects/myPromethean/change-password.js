@@ -1,4 +1,5 @@
 import homepage from '../../page-objects/myPromethean/home-page';
+import {CONFIG} from '../../../config';
 class changepasswordPage {
     get changepasswordButton() { return $("//span[contains(text(),'Change password')]")}
     get previouspasswordInput() { return $("input[name='previousPassword']") }
@@ -15,7 +16,7 @@ class changepasswordPage {
     }
 
     typenewpasswordpage(){
-        let emailaddres = process.env.User_PASSWORD
+        let emailaddres = CONFIG.User_PASSWORD
         browser.waitUntil(() => this.previouspasswordInput.isClickable()===true,{timeout: 20000})
         this.previouspasswordInput.setValue(emailaddres)
         this.newpasswordInput.setValue(emailaddres)

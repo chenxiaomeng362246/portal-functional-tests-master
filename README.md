@@ -13,11 +13,25 @@ This repository contains functional test cases for Portal+.
 npm install
 ```
 
-4. Run tests and view allure report
+4. Run tests
 
 ```
-npm test
+npm run test
+```
+5. Generate HTML report
+
+```
+npm run open-allure
 ```
 
+6. Run a specific tag or a group of tags
+
+```
+$ npx wdio wdio.conf.js --cucumberOpts.tagExpression='@Tag or @AnotherTag'
+```
+For list of tags refer [Wiki page](https://wiki.prometheanjira.com/pages/viewpage.action?spaceKey=PANM&title=Test+Scenarios+Taxonomy).
+
+7. Exececute in different env
+Change test environment in ```config.js```
 ## Contributing
-To write tests, refer [Test Design Guidelines](https://wiki.prometheanjira.com/display/PANM/Test+Design+Guidelines) and [Webdriver.io](https://webdriver.io/docs/api.html) documentation
+To write tests, refer [Test Design Guidelines](https://wiki.prometheanjira.com/display/PANM/Test+Design+Guidelines) and [Webdriver.io](https://webdriver.io/docs/api.html) documentation.

@@ -1,5 +1,6 @@
 import EnrolPage from '../../page-objects/panel-management/enrol-page'
 import tagmanagementPage from '../../page-objects/panel-management/tagmanagement'
+import { CONFIG } from '../../../config'
 
 class SearchPage {
 
@@ -11,8 +12,8 @@ class SearchPage {
     searchexistedpanelPage(panelexist){
         browser.waitUntil(() => this.panelinfolist.isClickable()===true,{timeout: 20000})
         browser.pause(2000)
-        let panelname = process.env.panelname
-        let Panel_Serial_Number = process.env.Panel_Serial_Number
+        let panelname = CONFIG.panelname
+        let Panel_Serial_Number = CONFIG.Panel_Serial_Number
         if (this.panelnametext[0].isDisplayed()){
             console.log("panel is exist, no need add")
         }else{

@@ -1,10 +1,11 @@
 import {Given, When, Then} from 'cucumber';
 import LoginPage from '../../page-objects/myPromethean/login-page';
 import usersearchPage from '../../page-objects/user-management/user-search-page';
+import { CONFIG } from '../../../config'
 
 Given(/^I am logged in$/, function () {
     browser.deleteCookies()
-    let UsermanagementUrl = process.env.User_management_url
+    let UsermanagementUrl = CONFIG.User_management_url
     LoginPage.visitLoginPage(UsermanagementUrl);
     LoginPage.emailLoginPage();
     LoginPage.emailLogin();

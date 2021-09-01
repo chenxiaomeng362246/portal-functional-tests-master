@@ -1,9 +1,10 @@
 import {Given, When, Then} from 'cucumber';
 import LoginPage from '../../page-objects/myPromethean/login-page'
 import enrolPage from '../../page-objects/panel-management/enrol-page';
+import { CONFIG } from '../../../config'
 
 Given(/^I am on Panel Management home page$/, function () {
-  let PanelManagementUrl = process.env.Panel_management_url
+  let PanelManagementUrl = CONFIG.Panel_management_url
   LoginPage.visitLoginPage(PanelManagementUrl);
   LoginPage.emailLoginPage();
   LoginPage.emailLogin();

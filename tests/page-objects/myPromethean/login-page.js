@@ -1,3 +1,4 @@
+import { CONFIG } from '../../../config'
 class LoginPage {
     get emailButton() { return $$("//span[text()='Sign in with email']")[1]}
     get emailInput() { return $("input[type*='text']") }
@@ -28,8 +29,8 @@ class LoginPage {
     }
 
     emailLogin(){
-        let user_account = process.env.USER_NAME
-        let user_password = process.env.User_PASSWORD
+        let user_account = CONFIG.USER_NAME
+        let user_password = CONFIG.User_PASSWORD
         this.emailInput.setValue(user_account);
         this.passwordInput.setValue(user_password);
         this.signInButton.click();

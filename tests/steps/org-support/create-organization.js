@@ -1,9 +1,10 @@
 import {Given, When, Then} from 'cucumber';
 import LoginPage from '../../page-objects/myPromethean/login-page'
 import createorgPage from '../../page-objects/org-support/create-organization';
+import { CONFIG } from '../../../config'
 
 Given(/^I am on the org support page$/, function () {
-    let OrgsupportUrl = process.env.Org_support_url
+    let OrgsupportUrl = CONFIG.Org_support_url
     LoginPage.visitLoginPage(OrgsupportUrl);
     LoginPage.emailLoginPage();
     LoginPage.emailLogin();
