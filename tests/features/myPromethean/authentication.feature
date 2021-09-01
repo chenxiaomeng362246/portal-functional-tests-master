@@ -16,6 +16,7 @@ Feature: Authentication
     Then I should Signout
 
     # PORT-2188
+    @skip
     Scenario:  Invalid email on forgot password page
     And I click on Forgot Password
     When I enter Invalid email
