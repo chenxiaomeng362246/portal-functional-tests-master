@@ -53,6 +53,11 @@ exports.config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
+        'goog:chromeOptions': {
+            prefs: {
+                'intl.accept_languages': 'en,en_US'
+            }
+        },
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
