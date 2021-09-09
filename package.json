@@ -6,6 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js && npm run open-allure",
     "open-allure": "./node_modules/.bin/allure generate ./reports/allure-results --clean && allure open"
+    
   },
   "author": "abbas.qazvini",
   "license": "ISC",
