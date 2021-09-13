@@ -33,5 +33,8 @@ For list of tags refer [Wiki page](https://wiki.prometheanjira.com/pages/viewpag
 
 7. Exececute in different env
 Change test environment in ```config.js```
+
+8. Boost start up speed
+   At least run the code with "services: [['selenium-standalone', {skipSeleniumInstall:false }]]," in wdio.conf.js once to get the drivers installed locally in node_modules. After that, you could set "skipSeleniumInstall:true" to prevent time costing reinstall on each run.
 ## Contributing
 To write tests, refer [Test Design Guidelines](https://wiki.prometheanjira.com/display/PANM/Test+Design+Guidelines) and [Webdriver.io](https://webdriver.io/docs/api.html) documentation.
